@@ -225,6 +225,107 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 .heatmap-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-bottom:16px}
 /* WEAK SPOT */
 .weak-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-size:10px;font-weight:600;background:#fff0ee;color:var(--accent);border:1.5px solid #f5c4bb;margin-left:6px}
+
+/* REGION SELECTOR */
+.region-row{display:flex;gap:8px;margin-bottom:18px;overflow-x:auto;scrollbar-width:none}
+.region-row::-webkit-scrollbar{display:none}
+.region-chip{flex-shrink:0;padding:8px 14px;border-radius:99px;border:1.5px solid var(--border);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:6px}
+.region-chip.active{background:var(--accent2);border-color:var(--accent2);color:#fff}
+.region-chip:active{transform:scale(.95)}
+
+/* REGIONAL VARIANT BADGE */
+.variant-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:99px;font-size:10px;font-weight:600;margin-left:6px;vertical-align:middle}
+.variant-spain{background:#fff0ee;color:var(--accent);border:1px solid #f5c4bb}
+.variant-latam{background:#edfaf4;color:var(--green);border:1px solid #b0e8d0}
+.variant-mexico{background:#fff8e0;color:#b8860b;border:1px solid #f0d89a}
+.variant-argentina{background:#e8f4ff;color:var(--accent2);border:1px solid #b0d4f0}
+.variant-general{background:var(--surface2);color:var(--muted);border:1px solid var(--border)}
+
+/* FLASH MODE SELECTOR */
+.flash-mode-row{display:flex;gap:8px;margin-bottom:14px}
+.flash-mode-btn{flex:1;padding:10px 8px;border-radius:12px;border:1.5px solid var(--border);background:var(--surface);font-size:12px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s;font-family:inherit}
+.flash-mode-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* SPEED ROUND TIMER */
+.speed-timer{height:5px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:12px}
+.speed-timer-fill{height:100%;background:var(--green);border-radius:99px;transition:width .1s linear}
+.speed-timer-fill.warning{background:var(--gold)}
+.speed-timer-fill.danger{background:var(--accent)}
+
+/* REGIONAL WARNING */
+.regional-warning{background:#fff8e0;border:1.5px solid #f0d89a;border-radius:12px;padding:10px 14px;font-size:12px;color:#92650a;line-height:1.5;margin-top:8px}
+.regional-warning::before{content:'⚠️ ';font-size:13px}
+
+/* ── SENTENCE BUILDER ─────────────────── */
+.word-bank{display:flex;flex-wrap:wrap;gap:8px;min-height:48px;padding:12px;background:var(--surface2);border-radius:14px;border:1.5px dashed var(--border);margin-bottom:12px}
+.word-tile{padding:8px 14px;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;font-size:15px;cursor:pointer;font-family:inherit;transition:all .15s;user-select:none}
+.word-tile:active{transform:scale(.95)}
+.word-tile.used{opacity:.3;pointer-events:none}
+.word-tile.correct{background:#edfaf4;border-color:var(--green);color:var(--green)}
+.word-tile.wrong{background:#fff0ee;border-color:var(--accent);color:var(--accent)}
+.answer-area{display:flex;flex-wrap:wrap;gap:8px;min-height:52px;padding:12px;background:var(--surface);border:2px solid var(--accent2);border-radius:14px;margin-bottom:12px;cursor:pointer}
+.answer-tile{padding:8px 14px;background:var(--accent2);color:#fff;border-radius:10px;font-size:15px;cursor:pointer;transition:all .15s}
+.answer-tile:active{transform:scale(.95)}
+.answer-area-hint{color:var(--muted);font-size:13px;font-style:italic;align-self:center}
+
+/* ── READING PASSAGES ─────────────────── */
+.passage-text{font-size:16px;line-height:1.9;color:var(--text);margin-bottom:20px;padding:18px;background:var(--surface);border-radius:var(--radius);border:1.5px solid var(--border)}
+.passage-text .hl{background:#fff8e0;border-radius:4px;padding:1px 3px;cursor:pointer;font-weight:500}
+.passage-q{font-family:'Playfair Display',serif;font-size:17px;margin-bottom:14px;line-height:1.4}
+.reading-progress{display:flex;gap:6px;margin-bottom:16px}
+.rp-dot{width:10px;height:10px;border-radius:50%;background:var(--border);transition:background .3s}
+.rp-dot.done{background:var(--green)}
+.rp-dot.current{background:var(--accent)}
+
+/* ── WRITING / TRANSLATION ────────────── */
+.writing-input{width:100%;padding:16px;border-radius:14px;border:1.5px solid var(--border);background:var(--surface);font-family:inherit;font-size:16px;color:var(--text);resize:none;outline:none;min-height:90px;transition:border-color .2s;line-height:1.5}
+.writing-input:focus{border-color:var(--accent)}
+.writing-feedback{padding:14px 16px;border-radius:14px;font-size:14px;line-height:1.6;margin-top:10px}
+.writing-feedback.correct{background:#edfaf4;border:1.5px solid #b0e8d0;color:var(--green)}
+.writing-feedback.partial{background:#fff8e0;border:1.5px solid #f0d89a;color:#92650a}
+.writing-feedback.wrong{background:#fff0ee;border:1.5px solid #f5c4bb;color:var(--accent)}
+.key-words{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.kw{padding:3px 10px;background:var(--surface2);border-radius:99px;font-size:12px;border:1px solid var(--border)}
+
+/* ── VERB DRILLS ──────────────────────── */
+.verb-table{width:100%;border-collapse:collapse;margin-bottom:16px}
+.verb-table td,.verb-table th{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);font-size:14px}
+.verb-table th{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.verb-table tr:last-child td{border-bottom:none}
+.verb-highlight{color:var(--accent);font-weight:700}
+.conj-input{padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:15px;width:120px;outline:none;transition:border-color .2s}
+.conj-input:focus{border-color:var(--accent)}
+.conj-input.ok{border-color:var(--green);background:#edfaf4;color:var(--green)}
+.conj-input.bad{border-color:var(--accent);background:#fff0ee;color:var(--accent)}
+
+/* ── PERSONAL WORD BANK ───────────────── */
+.add-word-form{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:16px}
+.form-row{display:flex;gap:10px;margin-bottom:10px}
+.form-input{flex:1;padding:12px 14px;border:1.5px solid var(--border);border-radius:12px;font-family:inherit;font-size:15px;color:var(--text);outline:none;background:var(--bg);transition:border-color .2s}
+.form-input:focus{border-color:var(--accent)}
+.custom-badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;background:#e8f4ff;color:var(--accent2);border:1px solid #b0d4f0;vertical-align:middle;margin-left:6px}
+
+/* ── ACHIEVEMENTS ─────────────────────── */
+.achievements-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.achievement-card{background:var(--surface);border:1.5px solid var(--border);border-radius:16px;padding:16px;text-align:center;transition:all .3s}
+.achievement-card.earned{border-color:var(--gold);background:linear-gradient(135deg,#fffbf0,#fff8e0)}
+.achievement-card.locked{opacity:.5}
+.achievement-em{font-size:32px;margin-bottom:6px}
+.achievement-name{font-weight:600;font-size:13px;margin-bottom:3px}
+.achievement-desc{font-size:11px;color:var(--muted);line-height:1.4}
+.achievement-toast{position:fixed;top:60px;left:16px;right:16px;background:#1a1610;color:#fff;border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:12px;z-index:600;box-shadow:0 8px 30px rgba(0,0,0,.4);transform:translateY(-100px);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.achievement-toast.show{transform:translateY(0)}
+
+/* ── 30-DAY PLAN ──────────────────────── */
+.plan-day{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+.plan-day-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.plan-day-num.done{background:var(--green);color:#fff}
+.plan-day-num.today{background:var(--accent);color:#fff}
+.plan-day-num.future{background:var(--surface2);color:var(--muted)}
+.plan-day-info{flex:1}
+.plan-day-title{font-weight:600;font-size:14px}
+.plan-day-desc{font-size:12px;color:var(--muted);margin-top:2px}
+.plan-day-xp{font-size:12px;color:var(--gold);font-weight:600}
 </style>
 </head>
 <body>
@@ -248,6 +349,8 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
     </div>
     <div class="review-banner-count" id="reviewCount">0</div>
   </div>
+  <div class="section-lbl">Region</div>
+  <div class="region-row" id="regionRow"></div>
   <div class="section-lbl">Topic Focus</div>
   <div class="topics-scroll" id="topicsScroll"></div>
   <div class="section-lbl">Practice Modes</div>
@@ -291,6 +394,51 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
     <div class="mode-btn" onclick="startMode('pronun')" style="grid-column:1/-1;flex-direction:row;align-items:center">
       <div class="mode-icon">🗣️</div>
       <div><div class="mode-name">Pronunciation Guide</div><div class="mode-desc">Master Spanish sounds · videos + tips</div></div>
+    </div>
+    <div class="mode-btn" onclick="startMode('variants')" style="grid-column:1/-1;flex-direction:row;align-items:center">
+      <div class="mode-icon">🌍</div>
+      <div><div class="mode-name">Regional Variants</div><div class="mode-desc">All regional differences side by side</div></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent2)"></div>
+    </div>
+    <div class="mode-btn" onclick="startMode('builder')" >
+      <div class="mode-icon">🧩</div>
+      <div class="mode-name">Sentence Builder</div>
+      <div class="mode-desc">Arrange words into sentences</div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:#f72585"></div>
+    </div>
+    <div class="mode-btn" onclick="startMode('reading')">
+      <div class="mode-icon">📖</div>
+      <div class="mode-name">Reading</div>
+      <div class="mode-desc">Passages + comprehension</div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:#4cc9f0"></div>
+    </div>
+    <div class="mode-btn" onclick="startMode('writing')">
+      <div class="mode-icon">✍️</div>
+      <div class="mode-name">Write in Spanish</div>
+      <div class="mode-desc">Translate English → Spanish</div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:#7209b7"></div>
+    </div>
+    <div class="mode-btn" onclick="startMode('verbs')">
+      <div class="mode-icon">🔤</div>
+      <div class="mode-name">Verb Drills</div>
+      <div class="mode-desc">50 essential verbs conjugated</div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:#3a0ca3"></div>
+    </div>
+    <div class="mode-btn" onclick="startMode('wordBank')" style="grid-column:1/-1;flex-direction:row;align-items:center">
+      <div class="mode-icon">📚</div>
+      <div><div class="mode-name">My Word Bank</div><div class="mode-desc">Add your own vocabulary to the SRS system</div></div>
+      <div class="mode-badge" id="wordBankBadge" style="display:none">0</div>
+    </div>
+    <div class="mode-btn" onclick="startMode('plan')" style="grid-column:1/-1;flex-direction:row;align-items:center">
+      <div class="mode-icon">📅</div>
+      <div><div class="mode-name">30-Day Plan</div><div class="mode-desc">Your guided learning journey</div></div>
+      <div class="mode-badge" id="planBadge">Day 1</div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2))"></div>
+    </div>
+    <div class="mode-btn" onclick="startMode('achievements')" style="grid-column:1/-1;flex-direction:row;align-items:center">
+      <div class="mode-icon">🏆</div>
+      <div><div class="mode-name">Achievements</div><div class="mode-desc">Milestones and badges</div></div>
+      <div class="mode-badge" id="achieveBadge" style="background:var(--gold)">0</div>
     </div>
     <div class="mode-btn" onclick="startMode('bookmarks')" style="grid-column:1/-1;flex-direction:row;align-items:center">
       <div class="mode-icon">🔖</div>
@@ -366,6 +514,60 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 <!-- SESSION SUMMARY OVERLAY -->
 <div id="summaryOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;overflow-y:auto;padding:16px">
   <div style="max-width:500px;margin:auto;padding-top:20px" id="summaryInner"></div>
+</div>
+
+<!-- VARIANTS -->
+<div id="variantsScreen" class="screen">
+  <div class="hdr"><div class="back" onclick="goHome()">←</div><div class="hdr-title">🌍 Regional Variants</div></div>
+  <div id="variantsContent"></div>
+</div>
+
+<!-- SENTENCE BUILDER -->
+<div id="builderScreen" class="screen">
+  <div class="hdr"><div class="back" onclick="goHome()">←</div><div class="hdr-title">🧩 Sentence Builder</div></div>
+  <div id="builderContent"></div>
+</div>
+
+<!-- READING -->
+<div id="readingScreen" class="screen">
+  <div class="hdr"><div class="back" onclick="goHome()">←</div><div class="hdr-title">📖 Reading</div></div>
+  <div id="readingContent"></div>
+</div>
+
+<!-- WRITING -->
+<div id="writingScreen" class="screen">
+  <div class="hdr"><div class="back" onclick="goHome()">←</div><div class="hdr-title">✍️ Write in Spanish</div></div>
+  <div id="writingContent"></div>
+</div>
+
+<!-- VERBS -->
+<div id="verbsScreen" class="screen">
+  <div class="hdr"><div class="back" onclick="goHome()">←</div><div class="hdr-title">🔤 Verb Drills</div></div>
+  <div id="verbsContent"></div>
+</div>
+
+<!-- WORD BANK -->
+<div id="wordBankScreen" class="screen">
+  <div class="hdr"><div class="back" onclick="goHome()">←</div><div class="hdr-title">📚 My Word Bank</div></div>
+  <div id="wordBankContent"></div>
+</div>
+
+<!-- 30-DAY PLAN -->
+<div id="planScreen" class="screen">
+  <div class="hdr"><div class="back" onclick="goHome()">←</div><div class="hdr-title">📅 30-Day Plan</div></div>
+  <div id="planContent"></div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div id="achievementsScreen" class="screen">
+  <div class="hdr"><div class="back" onclick="goHome()">←</div><div class="hdr-title">🏆 Achievements</div></div>
+  <div id="achievementsContent"></div>
+</div>
+
+<!-- ACHIEVEMENT TOAST -->
+<div class="achievement-toast" id="achievementToast">
+  <div style="font-size:32px" id="toastEm"></div>
+  <div><div style="font-weight:700;font-size:14px" id="toastTitle"></div><div style="font-size:12px;opacity:.7" id="toastDesc"></div></div>
 </div>
 
 <!-- NAV -->
@@ -772,6 +974,200 @@ const VOCAB = {
   ]
 };
 
+
+/* ═══════════════════════════════════════════
+   REGIONAL VARIANTS
+   Words/phrases that differ by region
+═══════════════════════════════════════════ */
+const REGIONS = [
+  {id:'General', flag:'🌍', label:'General'},
+  {id:'Spain',   flag:'🇪🇸', label:'Spain'},
+  {id:'Mexico',  flag:'🇲🇽', label:'Mexico'},
+  {id:'Argentina', flag:'🇦🇷', label:'Argentina'},
+  {id:'Colombia', flag:'🇨🇴', label:'Colombia'},
+];
+
+// Each entry: es (base Spanish), en (English), then regional alternates
+// alternates: [{region, es, note}]
+const VARIANTS = [
+  // TRANSPORT
+  {en:'car', es:'el coche',
+   alternates:[
+     {region:'Spain',     es:'el coche',      note:'Standard in Spain'},
+     {region:'Mexico',    es:'el carro',       note:'Used across most of Latin America'},
+     {region:'Argentina', es:'el auto',        note:'Used in Argentina, Chile, Uruguay'},
+     {region:'Colombia',  es:'el carro',       note:'Same as Mexico'},
+   ]},
+  {en:'bus', es:'el autobús',
+   alternates:[
+     {region:'Spain',     es:'el autobús',     note:'Standard in Spain'},
+     {region:'Mexico',    es:'el camión',      note:'Specifically a city bus in Mexico'},
+     {region:'Argentina', es:'el colectivo',   note:'The Buenos Aires term for city bus'},
+     {region:'Colombia',  es:'la buseta',      note:'Small bus common in Colombian cities'},
+   ]},
+  {en:'to drive', es:'conducir',
+   alternates:[
+     {region:'Spain',     es:'conducir',       note:'Standard in Spain'},
+     {region:'Mexico',    es:'manejar',        note:'Used across most of Latin America'},
+     {region:'Argentina', es:'manejar',        note:'Same as Mexico'},
+     {region:'Colombia',  es:'manejar',        note:'Same as Mexico'},
+   ]},
+  // TECHNOLOGY
+  {en:'computer', es:'el ordenador',
+   alternates:[
+     {region:'Spain',     es:'el ordenador',   note:'Standard in Spain'},
+     {region:'Mexico',    es:'la computadora', note:'Used across Latin America'},
+     {region:'Argentina', es:'la computadora', note:'Same as Mexico'},
+     {region:'Colombia',  es:'el computador',  note:'Masculine form used in Colombia'},
+   ]},
+  {en:'mobile phone', es:'el móvil',
+   alternates:[
+     {region:'Spain',     es:'el móvil',       note:'Standard in Spain'},
+     {region:'Mexico',    es:'el celular',     note:'Used across Latin America'},
+     {region:'Argentina', es:'el celular',     note:'Same as Mexico'},
+     {region:'Colombia',  es:'el celular',     note:'Same as Mexico'},
+   ]},
+  {en:'to use the internet', es:'navegar por internet',
+   alternates:[
+     {region:'Spain',     es:'navegar por internet', note:'Standard everywhere'},
+     {region:'Mexico',    es:'navegar en internet',  note:'Preposition differs slightly'},
+     {region:'Argentina', es:'navegar en internet',  note:'Same as Mexico'},
+   ]},
+  // HOME
+  {en:'apartment', es:'el piso',
+   alternates:[
+     {region:'Spain',     es:'el piso',         note:'Standard in Spain'},
+     {region:'Mexico',    es:'el departamento', note:'Used in Mexico and Central America'},
+     {region:'Argentina', es:'el departamento', note:'Same as Mexico'},
+     {region:'Colombia',  es:'el apartamento',  note:'Closer to English "apartment"'},
+   ]},
+  {en:'swimming pool', es:'la piscina',
+   alternates:[
+     {region:'Spain',     es:'la piscina',      note:'Standard in Spain'},
+     {region:'Mexico',    es:'la alberca',      note:'Uniquely Mexican term'},
+     {region:'Argentina', es:'la pileta',       note:'Used in Argentina'},
+     {region:'Colombia',  es:'la piscina',      note:'Same as Spain'},
+   ]},
+  // FOOD & DRINK
+  {en:'orange juice', es:'el zumo de naranja',
+   alternates:[
+     {region:'Spain',     es:'el zumo de naranja',   note:'Standard in Spain'},
+     {region:'Mexico',    es:'el jugo de naranja',   note:'Used across Latin America'},
+     {region:'Argentina', es:'el jugo de naranja',   note:'Same as Mexico'},
+     {region:'Colombia',  es:'el jugo de naranja',   note:'Same as Mexico'},
+   ]},
+  {en:'popcorn', es:'las palomitas',
+   alternates:[
+     {region:'Spain',     es:'las palomitas',   note:'Standard in Spain'},
+     {region:'Mexico',    es:'las palomitas',   note:'Same as Spain'},
+     {region:'Argentina', es:'el pochoclo',     note:'Unique Argentine term'},
+     {region:'Colombia',  es:'las crispetas',   note:'Uniquely Colombian term'},
+   ]},
+  {en:'cake', es:'el pastel',
+   alternates:[
+     {region:'Spain',     es:'la tarta',        note:'Standard in Spain'},
+     {region:'Mexico',    es:'el pastel',       note:'Standard in Mexico'},
+     {region:'Argentina', es:'la torta',        note:'Used in Argentina — but "torta" means sandwich in Mexico!'},
+     {region:'Colombia',  es:'el ponqué',       note:'Unique Colombian term'},
+   ]},
+  {en:'sandwich', es:'el bocadillo',
+   alternates:[
+     {region:'Spain',     es:'el bocadillo',    note:'A filled bread roll in Spain'},
+     {region:'Mexico',    es:'la torta',        note:'Mexico uses "torta" for sandwich'},
+     {region:'Argentina', es:'el sándwich',     note:'Argentina uses the English loanword'},
+     {region:'Colombia',  es:'el sándwich',     note:'Same as Argentina'},
+   ]},
+  // PEOPLE
+  {en:'boy/kid', es:'el chico',
+   alternates:[
+     {region:'Spain',     es:'el chico',        note:'Standard in Spain'},
+     {region:'Mexico',    es:'el chavo',        note:'Very Mexican — made famous by El Chavo del 8'},
+     {region:'Argentina', es:'el pibe',         note:'Classic Argentine slang for boy/kid'},
+     {region:'Colombia',  es:'el chino',        note:'Informal Colombian term — not related to Chinese'},
+   ]},
+  {en:'cool / great', es:'guay',
+   alternates:[
+     {region:'Spain',     es:'guay',            note:'Very Spanish slang for cool'},
+     {region:'Mexico',    es:'chido / padre',   note:'"Chido" is casual, "padre" means cool literally'},
+     {region:'Argentina', es:'copado',          note:'Argentine slang for cool/awesome'},
+     {region:'Colombia',  es:'chévere',         note:'Also used in Venezuela and the Caribbean'},
+   ]},
+  {en:'friend', es:'el amigo',
+   alternates:[
+     {region:'Spain',     es:'el tío / la tía', note:'"Tío" literally means uncle but is slang for "dude" in Spain'},
+     {region:'Mexico',    es:'el cuate / el mano', note:'"Cuate" means twin/buddy, "mano" short for hermano'},
+     {region:'Argentina', es:'el che',          note:'Classic Argentine term — also Che Guevara\'s nickname'},
+     {region:'Colombia',  es:'el parcero',      note:'Colombian slang for close friend'},
+   ]},
+  // GRAMMAR DIFFERENCES
+  {en:'you all (plural you)', es:'vosotros',
+   alternates:[
+     {region:'Spain',     es:'vosotros/as',     note:'ONLY used in Spain. "Vosotros coméis" = you all eat'},
+     {region:'Mexico',    es:'ustedes',          note:'Latin America uses "ustedes" for ALL plural you'},
+     {region:'Argentina', es:'ustedes',          note:'Same as Mexico — vosotros is never used'},
+     {region:'Colombia',  es:'ustedes',          note:'Same as Mexico'},
+   ]},
+  {en:'you (singular informal)', es:'tú',
+   alternates:[
+     {region:'Spain',     es:'tú',              note:'Standard across Spain'},
+     {region:'Mexico',    es:'tú',              note:'Standard in Mexico and most of Latin America'},
+     {region:'Argentina', es:'vos',             note:'Argentina uses "vos" instead of "tú" — "Vos hablás" not "Tú hablas"'},
+     {region:'Colombia',  es:'vos / tú',        note:'Some regions use "vos", others use "tú"'},
+   ]},
+  // DANGER WORDS
+  {en:'to take / to grab', es:'coger',
+   alternates:[
+     {region:'Spain',     es:'coger',           note:'Perfectly normal in Spain: "Coge el autobús" = take the bus'},
+     {region:'Mexico',    es:'tomar / agarrar', note:'⚠️ "Coger" is very vulgar in Mexico — use "tomar" or "agarrar"'},
+     {region:'Argentina', es:'tomar / agarrar', note:'⚠️ Also vulgar in Argentina — avoid "coger"'},
+     {region:'Colombia',  es:'tomar / coger',   note:'"Coger" is acceptable in Colombia, unlike Mexico'},
+   ], warning:'⚠️ Regional danger word! "Coger" is perfectly normal in Spain but very offensive in Mexico and Argentina.'},
+  {en:'pen', es:'el bolígrafo',
+   alternates:[
+     {region:'Spain',     es:'el bolígrafo',    note:'Standard in Spain, also "el boli" informally'},
+     {region:'Mexico',    es:'el lapicero / la pluma', note:'"La pluma" is most common in Mexico'},
+     {region:'Argentina', es:'el lapicera',     note:'Feminine form used in Argentina'},
+     {region:'Colombia',  es:'el esfero',       note:'Uniquely Colombian — from the brand "Esferográfico"'},
+   ]},
+  {en:'to work (hard)', es:'trabajar',
+   alternates:[
+     {region:'Spain',     es:'currar',          note:'Spanish slang for working: "¿Estás currando?" = Are you working?'},
+     {region:'Mexico',    es:'chambear',        note:'Mexican slang for working: "Voy a chambear" = I\'m going to work'},
+     {region:'Argentina', es:'laburar',         note:'Argentine slang from Italian "lavorare"'},
+     {region:'Colombia',  es:'trabajar',        note:'Colombia uses the standard form'},
+   ]},
+];
+
+/* Helper: get the right form for the current region */
+function getRegionalForm(variantEntry) {
+  const region = state.region || 'General';
+  if (region === 'General') return {es: variantEntry.es, note: null, allForms: variantEntry.alternates};
+  const match = (variantEntry.alternates||[]).find(a => a.region === region);
+  return match ? {es: match.es, note: match.note, allForms: variantEntry.alternates, warning: variantEntry.warning}
+               : {es: variantEntry.es, note: null, allForms: variantEntry.alternates};
+}
+
+/* Get a regional vocab card to inject into flashcard sessions */
+function getRegionalCards() {
+  const region = state.region || 'General';
+  return VARIANTS.map(v => {
+    const form = getRegionalForm(v);
+    const allForms = (v.alternates||[]).map(a => a.flag ? a : a);
+    // Build display: primary form + all regional alternatives on back
+    return {
+      es: form.es,
+      en: v.en,
+      ex: form.note || '',
+      ex_en: '',
+      isVariant: true,
+      warning: v.warning || null,
+      allForms: v.alternates || [],
+      variantFor: v.en
+    };
+  });
+}
+
+
 const PHRASES = [
   {es:'¿Cómo te llamas?',en:"What's your name?",note:'Use this to ask someone\'s name casually. Formal: ¿Cómo se llama usted?'},
   {es:'Me llamo...',en:'My name is...',note:'The standard way to introduce yourself in Spanish.'},
@@ -948,6 +1344,8 @@ const CONVO_SCRIPTS = [
 ═══════════════════════════════════════════ */
 let state = {
   topic: TOPICS[0],
+  region: 'General', // 'Spain', 'Mexico', 'Argentina', 'General'
+  flashMode: 'normal', // 'normal', 'reverse', 'speed'
   streak: 1,
   xpTotal: 0,
   xpToday: 0,
@@ -963,6 +1361,11 @@ let state = {
   phrasesIndex: 0,
   flashTopicIndex: {},
   convoScriptIndex: 0,
+  customVocab: [],        // personal word bank
+  achievements: {},       // earned achievement ids
+  dayPlan: 0,             // current day in 30-day plan (0-29)
+  writingCorrect: 0,
+  writingAnswered: 0,
 };
 
 /* ═══════════════════════════════════════════
@@ -1171,13 +1574,66 @@ function startMode(mode, sub) {
 /* ═══════════════════════════════════════════
    TOPICS
 ═══════════════════════════════════════════ */
+function renderRegions() {
+  const el = document.getElementById('regionRow');
+  if (!el) return;
+  el.innerHTML = '';
+  REGIONS.forEach(function(r) {
+    const chip = document.createElement('div');
+    chip.className = 'region-chip' + (r.id===state.region?' active':'');
+    chip.textContent = r.flag+' '+r.label;
+    chip.onclick = function(){ selectRegion(r.id); };
+    el.appendChild(chip);
+  });
+}
+
+function selectRegion(r) {
+  state.region = r;
+  save();
+  renderRegions();
+  // Show a brief toast explaining what changed
+  showRegionToast(r);
+}
+
+function showRegionToast(region) {
+  const existing = document.getElementById('regionToast');
+  if (existing) existing.remove();
+  const notes = {
+    'General': 'Showing standard Spanish used in most contexts.',
+    'Spain': '🇪🇸 Spain mode: vosotros, coger, ordenador, piso...',
+    'Mexico': '🇲🇽 Mexico mode: ustedes, manejar, computadora, departamento...',
+    'Argentina': '🇦🇷 Argentina mode: vos, che, laburo, pileta, colectivo...',
+    'Colombia': '🇨🇴 Colombia mode: parcero, esfero, apartamento, buseta...',
+  };
+  const toast = document.createElement('div');
+  toast.id = 'regionToast';
+  toast.style.cssText = 'position:fixed;bottom:80px;left:16px;right:16px;background:#1a1610;color:#fff;border-radius:14px;padding:12px 16px;font-size:13px;z-index:500;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.3)';
+  toast.textContent = notes[region] || '';
+  document.body.appendChild(toast);
+  setTimeout(() => { if(toast.parentNode) toast.remove(); }, 3000);
+}
+
 function renderTopics() {
-  document.getElementById('topicsScroll').innerHTML = TOPICS.map(t=>
-    `<div class="topic-chip${t===state.topic?' active':''}" onclick="selectTopic('${t}')">${t}</div>`
-  ).join('');
+  const el = document.getElementById('topicsScroll');
+  if (!el) return;
+  el.innerHTML = '';
+  TOPICS.forEach(function(t) {
+    const chip = document.createElement('div');
+    chip.className = 'topic-chip' + (t===state.topic?' active':'');
+    chip.textContent = topicEmoji(t)+' '+t;
+    chip.onclick = function(){ selectTopic(t); };
+    el.appendChild(chip);
+  });
 }
 function selectTopic(t) { state.topic=t; save(); renderTopics(); }
+
+function topicEmoji(t) {
+  const map = {Travel:'🌍',Food:'🍽️',Family:'👨‍👩‍👧',Work:'💼',Shopping:'🛍️',
+    Feelings:'😊',Time:'⏰',Health:'🏥',Social:'🎉',Animals:'🐾',Nature:'🌿',Home:'🏠'};
+  return map[t]||'';
+}
 function topicVocab() { return VOCAB[state.topic]||VOCAB[TOPICS[0]]; }
+function topicName() { return (state.topic||TOPICS[0]).replace(/^[^\s]+\s/,''); }
 
 /* ═══════════════════════════════════════════
    FLASHCARDS
@@ -1187,105 +1643,293 @@ let flashDeck=[], flashIdx=0, flashFlipped=false;
 function startFlash(sub) {
   if (sub==='review') {
     flashDeck = getDueCards().map(v => {
-      // find full vocab entry
       const full = Object.values(VOCAB).flat().find(w=>w.es===v.es);
       return full || v;
     });
     if (flashDeck.length===0) {
-      document.getElementById('flashContent').innerHTML='<p style="color:var(--muted);padding:20px 0">No cards due right now — check back later!</p>';
+      document.getElementById('flashContent').innerHTML='<p style="color:var(--muted);padding:20px 0">No cards due — check back later!</p>';
       return;
     }
-  } else {
-    const tv = topicVocab();
-    // show lowest-level cards first
-    flashDeck = [...tv].sort((a,b)=>(getVocabLevel(a.es))-(getVocabLevel(b.es)));
-    flashDeck = flashDeck.slice(0,10);
+    flashIdx=0; flashFlipped=false;
+    renderFlash();
+    return;
   }
+  const tv = topicVocab();
+  const sorted=[...tv].sort((a,b)=>(getVocabLevel(a.es))-(getVocabLevel(b.es)));
+  let deck = sorted.slice(0,8);
+  // Inject 2 regional variant cards if region is set
+  if (state.region && state.region !== 'General') {
+    const regional = shuffle(getRegionalCards()).slice(0,2);
+    deck = shuffle([...deck, ...regional]);
+  }
+  flashDeck = deck;
   flashIdx=0; flashFlipped=false;
-  renderFlash();
+  renderFlashModeSelector();
+}
+
+function renderFlashModeSelector() {
+  const el = document.getElementById('flashContent');
+  const region = state.region || 'General';
+  const regionFlag = (REGIONS.find(function(r){return r.id===region;})||{}).flag || '🌍';
+
+  el.innerHTML = '<div style="display:flex;flex-direction:column;gap:16px;padding-top:4px">'
+    + '<div class="card" style="padding:16px">'
+    + '<div class="section-lbl" style="margin-bottom:10px">Study Mode</div>'
+    + '<div class="flash-mode-row" id="flashModeRow"></div>'
+    + '</div>'
+    + '<div class="card" style="padding:16px">'
+    + '<div class="section-lbl" style="margin-bottom:6px">Region: '+regionFlag+' '+region+'</div>'
+    + '<p style="font-size:12px;color:var(--muted);line-height:1.5">Regional variants are mixed in. Change region on the home screen.</p>'
+    + '</div>'
+    + '<button class="btn btn-primary" onclick="renderFlash()">Start '+flashDeck.length+' Cards →</button>'
+    + '</div>';
+
+  const modes = [
+    {id:'normal',  label:'🃏 Normal',  sub:'Spanish → English'},
+    {id:'reverse', label:'🔄 Reverse', sub:'English → Spanish'},
+    {id:'speed',   label:'⚡ Speed',   sub:'5 sec per card'},
+  ];
+  const row = document.getElementById('flashModeRow');
+  modes.forEach(function(m) {
+    const btn = document.createElement('button');
+    btn.className = 'flash-mode-btn' + (state.flashMode===m.id?' active':'');
+    btn.innerHTML = m.label+'<br><span style="font-weight:400;opacity:.7;font-size:10px">'+m.sub+'</span>';
+    btn.onclick = function(){ setFlashMode(m.id); };
+    row.appendChild(btn);
+  });
+}
+
+function setFlashMode(mode) {
+  state.flashMode = mode;
+  save();
+  renderFlashModeSelector();
+}
+
+function getFlashOptions(correct, allCards) {
+  // Smart wrong answers: prefer words with similar length/category
+  const others = shuffle(allCards.filter(function(c){ return c.es !== correct.es; }));
+  // Mix in regional variant options if available
+  const regionalWrongs = VARIANTS.filter(function(v){ return v.en !== (correct.variantFor||correct.en); })
+    .slice(0,2).map(function(v){ return v.en; });
+  const wrongs = others.slice(0,3).map(function(c){ return c.en; });
+  const allWrongs = shuffle([...new Set([...wrongs, ...regionalWrongs])]).slice(0,3);
+  return shuffle([correct.en, ...allWrongs]);
+}
+
+function getFlashOptionsReverse(correct, allCards) {
+  // For reverse mode: show English, pick Spanish
+  const others = shuffle(allCards.filter(function(c){ return c.es !== correct.es; }));
+  const wrongs = others.slice(0,3).map(function(c){ return c.es; });
+  return shuffle([correct.es, ...wrongs]);
+}
+
+let speedTimer = null;
+let speedTimeLeft = 5;
+
+function clearSpeedTimer() {
+  if (speedTimer) { clearInterval(speedTimer); speedTimer = null; }
 }
 
 function renderFlash() {
+  clearSpeedTimer();
   const el = document.getElementById('flashContent');
-  if (flashIdx>=flashDeck.length) {
-    el.innerHTML = resultHTML('Party','Well done!',`You reviewed ${flashDeck.length} cards.`,flashDeck.length*3,'startFlash()','New Cards');
-    addXP(flashDeck.length*3);
+  if (flashIdx >= flashDeck.length) {
+    el.innerHTML = resultHTML('★','Well done!','You reviewed '+flashDeck.length+' cards.',sessionCorrect*3,'startFlash()','New Cards');
+    setTimeout(function(){ showSummary('Flashcards', sessionCorrect*3); }, 400);
     return;
   }
   const c = flashDeck[flashIdx];
   const pct = Math.round(flashIdx/flashDeck.length*100);
   const lvl = getVocabLevel(c.es);
-  const lvlLabels=['New','Learning','Familiar','Good','Mastered','Expert'];
-  flashFlipped=false;
-  el.innerHTML=`
-    <div style="display:flex;flex-direction:column;gap:14px;padding-top:4px;">
-      <div class="pbar-wrap">
-        <div class="pbar"><div class="pbar-fill" style="width:${pct}%"></div></div>
-        <div class="pbar-lbl">${flashIdx+1}/${flashDeck.length}</div>
-      </div>
-      <div style="text-align:right;font-size:11px;color:var(--muted)">Level: ${lvlLabels[lvl]}</div>
-      <div style="position:relative">
-        <div class="card-3d" onclick="flipFlash()">
-          <div class="card-face front" id="cf">
-            <div class="card-hint">Spanish — tap to reveal</div>
-            <div class="card-word">${c.es}</div>
-          </div>
-          <div class="card-face back" id="cb">
-            <div class="card-hint">English</div>
-            <div class="card-word">${c.en}</div>
-            <div class="card-ex">"${c.ex||c.example||''}"<br><em style="font-size:11px;opacity:.7">${c.ex_en||c.example_en||''}</em></div>
-            ${CULTURAL[c.es] ? `<div class="cultural-note" style="margin-top:10px;font-size:11px">${CULTURAL[c.es]}</div>` : ''}
-          </div>
-        </div>
-        <button class="bookmark-btn${isBookmarked(c.es)?' saved':''}" id="bookmarkBtn"
-          onclick="event.stopPropagation();toggleBookmark(this)">
-          🔖
-        </button>
-      </div>
-      <div class="flip-hint" id="fhint">Tap card to see answer</div>
-      <div class="vote-row">
-        <button class="vote-btn again" id="va" onclick="voteFlash('again')" disabled>Again</button>
-        <button class="vote-btn hard"  id="vh" onclick="voteFlash('hard')"  disabled>Hard</button>
-        <button class="vote-btn good"  id="vg" onclick="voteFlash('good')"  disabled>Good</button>
-        <button class="vote-btn easy"  id="ve" onclick="voteFlash('easy')"  disabled>Easy</button>
-      </div>
-    </div>`;
-}
+  const lvlLabels = ['New','Learning','Familiar','Good','Mastered','Expert'];
+  flashFlipped = false;
+  const mode = state.flashMode || 'normal';
+  const isReverse = mode === 'reverse';
+  const isSpeed = mode === 'speed';
 
-function flipFlash() {
-  flashFlipped=!flashFlipped;
-  const front=document.getElementById('cf');
-  const back=document.getElementById('cb');
-  const hint=document.getElementById('fhint');
-  if(flashFlipped){
-    front.classList.add('hidden');
-    back.classList.add('visible');
-    if(hint) hint.style.display='none';
-    ['va','vh','vg','ve'].forEach(id=>document.getElementById(id).disabled=false);
-  } else {
-    front.classList.remove('hidden');
-    back.classList.remove('visible');
-    if(hint) hint.style.display='';
-    ['va','vh','vg','ve'].forEach(id=>document.getElementById(id).disabled=true);
+  const allCards = topicVocab();
+  const options = isReverse ? getFlashOptionsReverse(c, allCards) : getFlashOptions(c, allCards);
+
+  // Question and answer vary by mode
+  const questionText = isReverse ? c.en : c.es;
+  const questionHint = isReverse ? 'What is this in Spanish?' : 'What does this mean in English?';
+  const exampleText = (!isReverse && (c.ex||c.example)) ? '&ldquo;'+(c.ex||c.example)+'&rdquo;' : '';
+
+  // Speed timer bar
+  const timerBar = isSpeed
+    ? '<div class="speed-timer"><div class="speed-timer-fill" id="speedFill" style="width:100%"></div></div>'
+    : '';
+
+  const cultural = (!isReverse && CULTURAL[c.es])
+    ? '<div class="cultural-note" style="margin-top:10px;font-size:11px">'+CULTURAL[c.es]+'</div>' : '';
+
+  // Regional variant info for this card
+  const variantEntry = VARIANTS.find(function(v){ return v.en===(c.variantFor||c.en); });
+  const variantBadge = variantEntry
+    ? '<div style="font-size:11px;color:var(--accent2);margin-top:6px">🌍 Has regional variants</div>' : '';
+
+  el.innerHTML = '<div style="display:flex;flex-direction:column;gap:12px;padding-top:4px;">'
+    + '<div class="pbar-wrap"><div class="pbar"><div class="pbar-fill" style="width:'+pct+'%"></div></div>'
+    + '<div class="pbar-lbl">'+(flashIdx+1)+'/'+flashDeck.length+'</div></div>'
+    + timerBar
+    + '<div style="display:flex;justify-content:space-between;align-items:center">'
+    + '<span style="font-size:11px;color:var(--muted)">Level: '+lvlLabels[lvl]
+    + (isReverse?' · 🔄 Reverse':'')+(isSpeed?' · ⚡ Speed':'')+'</span>'
+    + (c.isVariant ? '<span class="variant-badge variant-latam">🌍 Regional</span>' : '')
+    + '<button class="bookmark-btn'+(isBookmarked(c.es)?' saved':'')+'" id="bookmarkBtn" onclick="toggleBookmark(this)" style="position:static;width:34px;height:34px;flex-shrink:0">🔖</button>'
+    + '</div>'
+    + '<div class="card-face front" style="min-height:150px;cursor:default">'
+    + '<div class="card-hint">'+questionHint+'</div>'
+    + '<div class="card-word">'+questionText+'</div>'
+    + (exampleText ? '<div class="card-ex" style="margin-top:8px;font-size:12px;opacity:.7">'+exampleText+'</div>' : '')
+    + variantBadge
+    + '</div>'
+    + '<div class="quiz-opts" id="flashOpts"></div>'
+    + '<div class="cloze-feedback" id="flashFb">'+cultural+'</div>'
+    + '<button class="btn btn-secondary hidden" id="flashNext" onclick="nextFlash()" style="margin-top:4px">Next →</button>'
+    + '</div>';
+
+  // Add option buttons via DOM
+  const optsEl = document.getElementById('flashOpts');
+  options.forEach(function(opt) {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.id = 'fo'+options.indexOf(opt);
+    btn.textContent = opt;
+    btn.onclick = function() { answerFlash(btn, opt, c, isReverse); };
+    optsEl.appendChild(btn);
+  });
+
+  // Start speed timer
+  if (isSpeed) {
+    speedTimeLeft = 5;
+    speedTimer = setInterval(function() {
+      speedTimeLeft -= 0.1;
+      const pct = Math.max(0, speedTimeLeft/5*100);
+      const fill = document.getElementById('speedFill');
+      if (fill) {
+        fill.style.width = pct+'%';
+        fill.className = 'speed-timer-fill'+(pct<40?' warning':'')+(pct<20?' danger':'');
+      }
+      if (speedTimeLeft <= 0) {
+        clearSpeedTimer();
+        // Auto-mark as wrong
+        const wrongBtn = optsEl ? optsEl.querySelector('.quiz-opt') : null;
+        if (wrongBtn && !wrongBtn.disabled) {
+          answerFlash(wrongBtn, '__timeout__', c, isReverse);
+        }
+      }
+    }, 100);
   }
 }
+
+function buildRegionalFeedback(c) {
+  // Build the "all regional forms" table for feedback
+  const variantEntry = VARIANTS.find(function(v){ return v.en===(c.variantFor||c.en) || v.es===c.es; });
+  if (!variantEntry || !variantEntry.alternates) return '';
+  let html = '<div style="margin-top:12px;border-top:1px solid var(--border);padding-top:10px">'
+    + '<div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Regional forms</div>'
+    + '<div style="display:flex;flex-direction:column;gap:6px">';
+  variantEntry.alternates.forEach(function(a) {
+    const flag = (REGIONS.find(function(r){return r.id===a.region;})||{}).flag||'🌍';
+    html += '<div style="display:flex;align-items:baseline;gap:8px;font-size:13px">'
+      + '<span style="flex-shrink:0;font-size:15px">'+flag+'</span>'
+      + '<span style="font-weight:600">'+a.es+'</span>'
+      + '<span style="color:var(--muted);font-size:11px">'+a.note+'</span>'
+      + '</div>';
+  });
+  html += '</div>';
+  if (variantEntry.warning) {
+    html += '<div class="regional-warning" style="margin-top:8px">'+variantEntry.warning+'</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function answerFlash(btn, chosen, c, isReverse) {
+  clearSpeedTimer();
+  document.querySelectorAll('#flashOpts .quiz-opt').forEach(function(b){ b.disabled = true; });
+  const timedOut = chosen === '__timeout__';
+  const correct = !timedOut && (isReverse ? chosen === c.es : chosen === c.en);
+  if (!timedOut) {
+    btn.classList.add(correct ? 'correct' : 'wrong');
+    if (!correct) {
+      document.querySelectorAll('#flashOpts .quiz-opt').forEach(function(b){
+        const match = isReverse ? b.textContent === c.es : b.textContent === c.en;
+        if (match) b.classList.add('correct');
+      });
+    }
+  } else {
+    // Timed out — highlight correct answer
+    document.querySelectorAll('#flashOpts .quiz-opt').forEach(function(b){
+      const match = isReverse ? b.textContent === c.es : b.textContent === c.en;
+      if (match) b.classList.add('correct');
+    });
+  }
+
+  srsUpdate(c.es, correct ? 'good' : 'again');
+  trackAnswer(c.es, c.en, correct, 'Flashcards');
+  if (correct) { state.totalCorrect=(state.totalCorrect||0)+1; addXP(3); }
+  if (!correct || timedOut) flashDeck.push(c);
+  state.totalAnswered=(state.totalAnswered||0)+1;
+  save();
+
+  const fb = document.getElementById('flashFb');
+  if (fb) {
+    let msg = timedOut ? '⏱ Time\'s up! ' : (correct ? '✓ Correct! ' : '✗ ');
+
+    // Always show the word pair
+    if (!correct || timedOut) {
+      msg += isReverse
+        ? c.es+' means <strong>'+c.en+'</strong>'
+        : c.es+' means <strong>'+c.en+'</strong>';
+    }
+
+    // Always show example sentence in Spanish + English
+    const exSp = c.ex || c.example || '';
+    const exEn = c.ex_en || c.example_en || '';
+    if (exSp) {
+      msg += '<div style="margin-top:10px;padding:10px 12px;background:var(--surface2);border-radius:10px;border-left:3px solid '+(correct?'var(--green)':'var(--accent)')+'">'
+        + '<div style="font-size:13px;font-weight:500;margin-bottom:3px">&ldquo;'+exSp+'&rdquo;</div>'
+        + (exEn ? '<div style="font-size:12px;color:var(--muted);font-style:italic">'+exEn+'</div>' : '')
+        + '</div>';
+    }
+    // Show regional forms if this is a variant card or if the word has variants
+    msg += buildRegionalFeedback(c);
+    if (CULTURAL[c.es]) {
+      msg += '<div class="cultural-note" style="margin-top:8px;font-size:11px">'+CULTURAL[c.es]+'</div>';
+    }
+    fb.className = 'cloze-feedback '+(correct?'correct':'wrong')+' show';
+    fb.innerHTML = msg;
+  }
+  document.getElementById('flashNext').classList.remove('hidden');
+}
+
+function nextFlash() {
+  flashIdx++;
+  renderFlash();
+}
+
+// flipFlash removed — using MCQ instead
 
 function voteFlash(r) {
   const c=flashDeck[flashIdx];
   srsUpdate(c.es, r);
-  if(r==='again') { flashDeck.push(c); trackAnswer(c.es,c.en,false,'Flashcards'); }
-  else { trackAnswer(c.es,c.en,true,'Flashcards'); }
-  if(r==='good'||r==='easy') { state.totalCorrect=(state.totalCorrect||0)+1; addXP(3); }
+  const correct = (r==='good'||r==='easy');
+  trackAnswer(c.es, c.en, correct, 'Flashcards');
+  if(correct) {
+    state.totalCorrect=(state.totalCorrect||0)+1;
+    addXP(3);
+  }
+  if(r==='again') flashDeck.push(c);
   state.totalAnswered=(state.totalAnswered||0)+1;
   flashIdx++;
   save();
-  // Show summary when deck is done
   if(flashIdx>=flashDeck.length) {
-    const xp=flashDeck.length*3;
-    addXP(0); // already added per card
-    setTimeout(()=>showSummary('Flashcards',sessionCorrect*3),400);
+    setTimeout(()=>showSummary('Flashcards', sessionCorrect*3), 400);
+  } else {
+    renderFlash();
   }
-  renderFlash();
 }
 
 /* ═══════════════════════════════════════════
@@ -1420,15 +2064,43 @@ function nextListen(){
    PHRASES
 ═══════════════════════════════════════════ */
 function renderPhrases() {
-  document.getElementById('phrasesContent').innerHTML=`
-    <div class="phrase-list">
-      ${PHRASES.map(p=>`
-        <div class="card phrase-card">
-          <div class="phrase-es">${p.es}</div>
-          <div class="phrase-en">${p.en}</div>
-          <div class="phrase-note"> ${p.note}</div>
-        </div>`).join('')}
-    </div>`;
+  const region = state.region || 'General';
+  const regionFlag = (REGIONS.find(function(r){return r.id===region;})||{}).flag||'🌍';
+
+  // Regional variants section
+  let variantsHTML = '';
+  if (region !== 'General') {
+    const rv = VARIANTS.filter(function(v){
+      return (v.alternates||[]).some(function(a){return a.region===region;});
+    });
+    if (rv.length) {
+      variantsHTML = '<div class="section-lbl" style="margin-bottom:10px">'+regionFlag+' '+region+' specific words</div>'
+        + '<div class="phrase-list" style="margin-bottom:20px">'
+        + rv.map(function(v){
+            const alt = v.alternates.find(function(a){return a.region===region;});
+            const isDiff = alt && alt.es !== v.es;
+            return '<div class="card phrase-card"'+(v.warning?' style="border-left:3px solid var(--gold)"':'')+'>'
+              + '<div class="phrase-es">'+alt.es+'</div>'
+              + '<div class="phrase-en">'+v.en+'</div>'
+              + (isDiff?'<div style="font-size:11px;color:var(--muted);margin-bottom:4px">General Spanish: <em>'+v.es+'</em></div>':'')
+              + '<div class="phrase-note">💡 '+alt.note+'</div>'
+              + (v.warning?'<div class="regional-warning">'+v.warning+'</div>':'')
+              + '</div>';
+          }).join('')
+        + '</div><div class="section-lbl" style="margin-bottom:10px">Common phrases</div>';
+    }
+  }
+
+  document.getElementById('phrasesContent').innerHTML = variantsHTML
+    + '<div class="phrase-list">'
+    + PHRASES.map(function(p){
+        return '<div class="card phrase-card">'
+          +'<div class="phrase-es">'+p.es+'</div>'
+          +'<div class="phrase-en">'+p.en+'</div>'
+          +'<div class="phrase-note">💡 '+p.note+'</div>'
+          +'</div>';
+      }).join('')
+    + '</div>';
 }
 
 /* ═══════════════════════════════════════════
@@ -1604,26 +2276,36 @@ function renderDailyStep() {
 
   if(step.type==='flash') {
     dFlipState=false;
-    inner=`
-      <div class="step-tag vocab"> Vocabulary</div>
-      <div class="card-3d" onclick="dFlip()">
-        <div class="card-face front" id="dcf">
-          <div class="card-hint">Spanish — tap to reveal</div>
-          <div class="card-word">${step.data.es}</div>
-        </div>
-        <div class="card-face back" id="dcb">
-          <div class="card-hint">English</div>
-          <div class="card-word">${step.data.en}</div>
-          <div class="card-ex">"${step.data.ex||step.data.example||''}"</div>
-        </div>
-      </div>
-      <div class="flip-hint" id="dfhint">Tap to flip</div>
-      <div class="vote-row">
-        <button class="vote-btn again" id="da" onclick="dVote('again')" disabled>Again</button>
-        <button class="vote-btn hard"  id="dh" onclick="dVote('hard')"  disabled>Hard</button>
-        <button class="vote-btn good"  id="dg" onclick="dVote('good')"  disabled>Good</button>
-        <button class="vote-btn easy"  id="de" onclick="dVote('easy')"  disabled>Easy</button>
-      </div>`;
+    const dOpts=getFlashOptions(step.data,topicVocab());
+    inner='<div class="step-tag vocab"> Vocabulary</div>'
+      +'<div class="card-face front" style="min-height:140px;cursor:default">'
+      +'<div class="card-hint">What does this mean?</div>'
+      +'<div class="card-word">'+step.data.es+'</div></div>'
+      +'<div class="quiz-opts" id="dFlashOpts"></div>'
+      +'<div class="cloze-feedback" id="dFlashFb"></div>'
+      +'<button class="btn btn-secondary hidden" id="dFlashNext" onclick="dailyNext()" style="margin-top:4px">Next</button>';
+    setTimeout(function(){
+      const optsEl=document.getElementById('dFlashOpts');
+      if(!optsEl) return;
+      dOpts.forEach(function(opt){
+        const btn=document.createElement('button');
+        btn.className='quiz-opt'; btn.textContent=opt;
+        btn.onclick=function(){
+          document.querySelectorAll('#dFlashOpts .quiz-opt').forEach(function(b){b.disabled=true;});
+          const correct=(opt===step.data.en);
+          btn.classList.add(correct?'correct':'wrong');
+          if(!correct) document.querySelectorAll('#dFlashOpts .quiz-opt').forEach(function(b){if(b.textContent===step.data.en)b.classList.add('correct');});
+          srsUpdate(step.data.es,correct?'good':'again');
+          trackAnswer(step.data.es,step.data.en,correct,'Daily Lesson');
+          if(correct){state.totalCorrect=(state.totalCorrect||0)+1;dailyXP+=3;addXP(3);}
+          state.totalAnswered=(state.totalAnswered||0)+1;save();
+          const fb=document.getElementById('dFlashFb');
+          if(fb){fb.className='cloze-feedback '+(correct?'correct':'wrong')+' show';fb.textContent=correct?'✓ Correct!':'✗ The answer was '+step.data.en;}
+          document.getElementById('dFlashNext').classList.remove('hidden');
+        };
+        optsEl.appendChild(btn);
+      });
+    },50);
   } else if(step.type==='listen') {
     inner=`
       <div class="step-tag listen">Ear Listen & Type</div>
@@ -1684,67 +2366,162 @@ function dFlip(){
     ['da','dh','dg','de'].forEach(id=>document.getElementById(id).disabled=true);
   }
 }
-function dVote(r){const c=dailySteps[dailyIdx].data;srsUpdate(c.es,r);if(r==='good'||r==='easy')dailyXP+=3;dailyNext();}
-function dCheckListen(){const s=dailySteps[dailyIdx];const ans=stripAccents((document.getElementById('dlA').value||'').trim().toLowerCase().replace(/[¿¡]/g,''));const cor=stripAccents(s.data.es.toLowerCase().replace(/[¿¡]/g,''));document.getElementById('dlA').disabled=true;document.querySelector('#dailyContent .listen-card .btn-primary').disabled=true;document.getElementById('dlNext').classList.remove('hidden');const fb=document.getElementById('dlFb');const ok=ans===cor||levenshtein(ans,cor)<=3;if(ok){dailyXP+=4;fb.className='cloze-feedback correct show';fb.innerHTML=`✓ <strong>${s.data.es}</strong><br><em>${s.data.en}</em>`;}else{fb.className='cloze-feedback wrong show';fb.innerHTML=`Answer: <strong>${s.data.es}</strong><br><em>${s.data.en}</em>`;}}
+function dVote(r){
+  const c=dailySteps[dailyIdx].data;
+  srsUpdate(c.es,r);
+  const correct=(r==='good'||r==='easy');
+  trackAnswer(c.es,c.en,correct,'Daily Lesson');
+  if(correct){state.totalCorrect=(state.totalCorrect||0)+1;dailyXP+=3;addXP(3);}
+  state.totalAnswered=(state.totalAnswered||0)+1;
+  save();
+  dailyNext();
+}
+function dCheckListen(){
+  const step=dailySteps[dailyIdx];
+  const ans=stripAccents((document.getElementById('dlA').value||'').trim().toLowerCase().replace(/[¿¡]/g,''));
+  const cor=stripAccents(step.data.es.toLowerCase().replace(/[¿¡]/g,''));
+  document.getElementById('dlA').disabled=true;
+  document.querySelector('#dailyContent .listen-card .btn-primary').disabled=true;
+  document.getElementById('dlNext').classList.remove('hidden');
+  const fb=document.getElementById('dlFb');
+  const ok=ans===cor||levenshtein(ans,cor)<=3;
+  if(ok){
+    dailyXP+=4; state.totalCorrect=(state.totalCorrect||0)+1; addXP(4);
+    fb.className='cloze-feedback correct show';
+    fb.innerHTML='✓ <strong>'+step.data.es+'</strong><br><em>'+step.data.en+'</em>';
+  } else {
+    fb.className='cloze-feedback wrong show';
+    fb.innerHTML='Answer: <strong>'+step.data.es+'</strong><br><em>'+step.data.en+'</em>';
+  }
+  trackAnswer(step.data.es,step.data.en,ok,'Daily Lesson');
+  state.totalAnswered=(state.totalAnswered||0)+1;
+  save();
+}
 function dCheckCloze(){const s=dailySteps[dailyIdx];const ans=stripAccents((document.getElementById('dcA').value||'').trim().toLowerCase());const cor=stripAccents(s.data.a.toLowerCase());document.getElementById('dcA').disabled=true;document.querySelector('#dailyContent .cloze-card .btn-primary').disabled=true;document.getElementById('dcNext').classList.remove('hidden');const fb=document.getElementById('dcFb');const ok=ans===cor;if(ok){dailyXP+=4;fb.className='cloze-feedback correct show';fb.innerHTML=`✓ <strong>${s.data.a}</strong> — ${s.data.ex}`;}else{fb.className='cloze-feedback wrong show';fb.innerHTML=`Answer: <strong>${s.data.a}</strong> — ${s.data.ex}`;}}
-function dAnswerQuiz(c){const q=dailySteps[dailyIdx].data;document.querySelectorAll('#dailyContent .quiz-opt').forEach(b=>b.disabled=true);document.getElementById(`dqo${q.a}`).classList.add('correct');if(c!==q.a)document.getElementById(`dqo${c}`).classList.add('wrong');else dailyXP+=4;document.getElementById('dqEx').classList.add('show');document.getElementById('dqNext').style.display='block';}
+function dAnswerQuiz(c){
+  const q=dailySteps[dailyIdx].data;
+  document.querySelectorAll('#dailyContent .quiz-opt').forEach(b=>b.disabled=true);
+  document.getElementById('dqo'+q.a).classList.add('correct');
+  const correct=(c===q.a);
+  if(!correct) document.getElementById('dqo'+c).classList.add('wrong');
+  else { dailyXP+=4; state.totalCorrect=(state.totalCorrect||0)+1; addXP(4); }
+  trackAnswer(q.q,'',correct,'Daily Lesson');
+  state.totalAnswered=(state.totalAnswered||0)+1;
+  save();
+  document.getElementById('dqEx').classList.add('show');
+  document.getElementById('dqNext').style.display='block';
+}
 function dailyNext(){dailyIdx++;renderDailyStep();}
 
 /* ═══════════════════════════════════════════
    STATS
 ═══════════════════════════════════════════ */
 function renderStats() {
-  const accuracy=state.totalAnswered>0?Math.round(state.totalCorrect/state.totalAnswered*100):0;
-  const mastered=Object.values(state.vocab).filter(v=>(v.level||0)>=4).length;
-  const due=getDueCards().length;
-  document.getElementById('statGrid').innerHTML= heatmapHTML + `
-    <div class="stat-box"><div class="val" style="color:var(--accent)">${state.streak||1}</div><div class="lbl"> Day Streak</div></div>
-    <div class="stat-box"><div class="val" style="color:var(--gold)">${state.xpTotal||0}</div><div class="lbl">⭐ Total XP</div></div>
-    <div class="stat-box"><div class="val" style="color:var(--green)">${mastered}</div><div class="lbl"> Words Mastered</div></div>
-    <div class="stat-box"><div class="val" style="color:var(--accent2)">${accuracy}%</div><div class="lbl"> Accuracy</div></div>
-    <div class="stat-box"><div class="val">${state.totalSessions||0}</div><div class="lbl"> Sessions</div></div>
-    <div class="stat-box"><div class="val" style="color:var(--gold)">${due}</div><div class="lbl"> Due Now</div></div>`;
-  // Build 28-day heatmap
+  const accuracy = state.totalAnswered>0 ? Math.round(state.totalCorrect/state.totalAnswered*100) : 0;
+  const mastered = Object.values(state.vocab).filter(function(v){ return (v.level||0)>=4; }).length;
+  const due = getDueCards().length;
   const today = new Date();
-  const cells = Array.from({length:28},(_,i)=>{
-    const d = new Date(today); d.setDate(today.getDate()-(27-i));
+
+  // ── Heatmap ──────────────────────────────
+  const heatmapEl = document.createElement('div');
+  heatmapEl.style.marginBottom = '6px';
+  const heatGrid = document.createElement('div');
+  heatGrid.className = 'heatmap';
+  for (let i = 27; i >= 0; i--) {
+    const d = new Date(today);
+    d.setDate(today.getDate() - i);
     const key = d.toDateString();
-    const isToday = key === today.toDateString();
-    const active = (state.practiceDays||{})[key];
-    return `<div class="heatmap-cell${isToday?' today':active?' active':''}" title="${key}"></div>`;
-  }).join('');
-  const dayLabels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  const startDay = new Date(today); startDay.setDate(today.getDate()-27);
+    const cell = document.createElement('div');
+    cell.className = 'heatmap-cell'
+      + (key===today.toDateString() ? ' today' : ((state.practiceDays||{})[key] ? ' active' : ''));
+    cell.title = key;
+    heatGrid.appendChild(cell);
+  }
+  heatmapEl.appendChild(heatGrid);
+  const hmLabels = document.createElement('div');
+  hmLabels.className = 'heatmap-labels';
+  hmLabels.innerHTML = '<span>4 weeks ago</span><span>Today</span>';
+  heatmapEl.appendChild(hmLabels);
 
-  // Weak spots
-  const weakWords = Object.entries(state.vocab)
-    .filter(([,v])=>(v.level||0)<=1)
-    .sort((a,b)=>(a[1].level||0)-(b[1].level||0))
-    .slice(0,5);
+  // ── 6-box stats grid ─────────────────────
+  const statsGrid = document.getElementById('statGrid');
+  if (!statsGrid) return;
+  statsGrid.innerHTML =
+    '<div class="stat-box"><div class="val" style="color:var(--accent)">'+(state.streak||1)+'</div><div class="lbl">Day Streak</div></div>'
+   +'<div class="stat-box"><div class="val" style="color:var(--gold)">'+(state.xpTotal||0)+'</div><div class="lbl">Total XP</div></div>'
+   +'<div class="stat-box"><div class="val" style="color:var(--green)">'+mastered+'</div><div class="lbl">Words Mastered</div></div>'
+   +'<div class="stat-box"><div class="val" style="color:var(--accent2)">'+accuracy+'%</div><div class="lbl">Accuracy</div></div>'
+   +'<div class="stat-box"><div class="val">'+(state.totalSessions||0)+'</div><div class="lbl">Sessions</div></div>'
+   +'<div class="stat-box"><div class="val" style="color:var(--gold)">'+due+'</div><div class="lbl">Due Now</div></div>';
 
-  document.getElementById('statGrid').innerHTML = document.getElementById('statGrid').innerHTML || '';
-  // prepend heatmap and weak spots to existing stat content
-  const heatmapHTML = `
-    <div style="margin-bottom:20px">
-      <div class="section-lbl">28-Day Activity</div>
-      <div class="heatmap">${cells}</div>
-      <div class="heatmap-labels"><span>4 weeks ago</span><span>Today</span></div>
-    </div>
-    ${weakWords.length ? `<div style="margin-bottom:16px">
-      <div class="section-lbl">⚠️ Needs Practice</div>
-      ${weakWords.map(([es,v])=>`<div class="missed-item"><span class="missed-es">${es}</span><span class="missed-en">${v.en||''}</span></div>`).join('')}
-    </div>` : ''}`;
+  // Insert heatmap BEFORE the statGrid (not inside it)
+  if (statsGrid.parentNode) {
+    // Remove any existing heatmap/weak inserted previously
+    var prev = statsGrid.previousElementSibling;
+    while (prev && prev.classList && (prev.classList.contains('stats-extra'))) {
+      var toRemove = prev;
+      prev = prev.previousElementSibling;
+      toRemove.remove();
+    }
+    const wrapper = document.createElement('div');
+    wrapper.className = 'stats-extra';
+    wrapper.style.marginBottom = '16px';
 
-  const lvlLabels=['New','Learning','Familiar','Good','Mastered','Expert'];
-  const lvlColors=['var(--muted)','var(--accent)','var(--gold)','var(--accent2)','var(--green)','#7c3aed'];
-  const vocabList=Object.values(state.vocab).sort((a,b)=>(b.level||0)-(a.level||0)).slice(0,30);
-  document.getElementById('masteryList').innerHTML=vocabList.length===0
-    ?'<p style="color:var(--muted);font-size:14px;">No vocabulary yet — start with Flashcards or Daily Lesson!</p>'
-    :vocabList.map(v=>`
-      <div class="mastery-row">
-        <div><div class="mastery-word">${v.es}</div><div class="mastery-level" style="color:${lvlColors[v.level||0]}">${lvlLabels[v.level||0]}</div></div>
-        <div class="mastery-dots">${[0,1,2,3,4].map(i=>`<div class="dot${(v.level||0)>i?' filled':''}"></div>`).join('')}</div>
-      </div>`).join('');
+    // Activity label
+    const actLbl = document.createElement('div');
+    actLbl.className = 'section-lbl';
+    actLbl.style.marginBottom = '10px';
+    actLbl.textContent = '28-Day Activity';
+    wrapper.appendChild(actLbl);
+    wrapper.appendChild(heatmapEl);
+
+    // Weak words
+    const weakWords = Object.entries(state.vocab)
+      .filter(function(e){ return (e[1].level||0)<=1; })
+      .sort(function(a,b){ return (a[1].level||0)-(b[1].level||0); })
+      .slice(0,5);
+    if (weakWords.length) {
+      const weakLbl = document.createElement('div');
+      weakLbl.className = 'section-lbl';
+      weakLbl.style.cssText = 'margin-top:16px;margin-bottom:8px';
+      weakLbl.textContent = 'Needs Practice';
+      wrapper.appendChild(weakLbl);
+      weakWords.forEach(function(e) {
+        const row = document.createElement('div');
+        row.className = 'missed-item';
+        row.innerHTML = '<span class="missed-es">'+e[0]+'</span><span class="missed-en">'+(e[1].en||'')+'</span>';
+        wrapper.appendChild(row);
+      });
+    }
+
+    statsGrid.parentNode.insertBefore(wrapper, statsGrid);
+  }
+
+  // ── Vocabulary mastery list ───────────────
+  const lvlLabels = ['New','Learning','Familiar','Good','Mastered','Expert'];
+  const lvlColors = ['var(--muted)','var(--accent)','var(--gold)','var(--accent2)','var(--green)','#7c3aed'];
+  const vocabList = Object.values(state.vocab)
+    .sort(function(a,b){ return (b.level||0)-(a.level||0); })
+    .slice(0,30);
+  const masteryEl = document.getElementById('masteryList');
+  if (!masteryEl) return;
+  if (!vocabList.length) {
+    masteryEl.innerHTML = '<p style="color:var(--muted);font-size:14px;">No vocabulary yet — start with Flashcards or Daily Lesson!</p>';
+  } else {
+    masteryEl.innerHTML = '';
+    vocabList.forEach(function(v) {
+      const row = document.createElement('div');
+      row.className = 'mastery-row';
+      const dots = [0,1,2,3,4].map(function(i){
+        return '<div class="dot'+((v.level||0)>i?' filled':'')+'"></div>';
+      }).join('');
+      row.innerHTML = '<div><div class="mastery-word">'+(v.es||v.es||'')
+        +'</div><div class="mastery-level" style="color:'+lvlColors[v.level||0]+'">'
+        +lvlLabels[v.level||0]+'</div></div>'
+        +'<div class="mastery-dots">'+dots+'</div>';
+      masteryEl.appendChild(row);
+    });
+  }
 }
 
 /* ═══════════════════════════════════════════
@@ -2029,15 +2806,23 @@ function startDailyOffline()      { startDaily(); }
 
 // ── Main dispatcher — called from startMode() ─────────
 function startMode(mode, sub) {
-  if (mode === 'flash')      { showScreen('flashScreen');    resetSession('Flashcards'); isOnline ? startFlashOnline(sub) : startFlash(sub); return; }
-  if (mode === 'listen')     { showScreen('listenScreen');   resetSession('Listen & Type'); isOnline ? startListenOnline() : startListen(); return; }
-  if (mode === 'cloze')      { showScreen('clozeScreen');    resetSession('Fill-in-Blank'); isOnline ? startClozeOnline() : startCloze(); return; }
-  if (mode === 'grammar')    { showScreen('grammarScreen');  resetSession('Grammar Quiz'); isOnline ? startQuizOnline() : startQuiz(); return; }
-  if (mode === 'phrases')    { showScreen('phrasesScreen');  isOnline ? renderPhrasesOnline() : renderPhrases(); return; }
-  if (mode === 'daily')      { showScreen('dailyScreen');    resetSession('Daily Lesson'); isOnline ? startDailyOnline() : startDaily(); return; }
-  if (mode === 'watch')      { showScreen('watchScreen');    startWatch(); return; }
-  if (mode === 'pronun')     { showScreen('pronunScreen');   startPronun(); return; }
-  if (mode === 'bookmarks')  { showScreen('bookmarksScreen'); renderBookmarks(); return; }
+  if (mode === 'flash')        { showScreen('flashScreen');        resetSession('Flashcards'); isOnline ? startFlashOnline(sub) : startFlash(sub); return; }
+  if (mode === 'listen')       { showScreen('listenScreen');       resetSession('Listen & Type'); isOnline ? startListenOnline() : startListen(); return; }
+  if (mode === 'cloze')        { showScreen('clozeScreen');        resetSession('Fill-in-Blank'); isOnline ? startClozeOnline() : startCloze(); return; }
+  if (mode === 'grammar')      { showScreen('grammarScreen');      resetSession('Grammar Quiz'); isOnline ? startQuizOnline() : startQuiz(); return; }
+  if (mode === 'phrases')      { showScreen('phrasesScreen');      isOnline ? renderPhrasesOnline() : renderPhrases(); return; }
+  if (mode === 'daily')        { showScreen('dailyScreen');        resetSession('Daily Lesson'); isOnline ? startDailyOnline() : startDaily(); return; }
+  if (mode === 'watch')        { showScreen('watchScreen');        startWatch(); return; }
+  if (mode === 'pronun')       { showScreen('pronunScreen');       startPronun(); return; }
+  if (mode === 'bookmarks')    { showScreen('bookmarksScreen');    renderBookmarks(); return; }
+  if (mode === 'variants')     { showScreen('variantsScreen');     renderVariants(); return; }
+  if (mode === 'builder')      { showScreen('builderScreen');      startBuilder(); return; }
+  if (mode === 'reading')      { showScreen('readingScreen');      startReading(); return; }
+  if (mode === 'writing')      { showScreen('writingScreen');      startWriting(); return; }
+  if (mode === 'verbs')        { showScreen('verbsScreen');        startVerbs(); return; }
+  if (mode === 'wordBank')     { showScreen('wordBankScreen');     startWordBank(); return; }
+  if (mode === 'plan')         { showScreen('planScreen');         startPlan(); return; }
+  if (mode === 'achievements') { showScreen('achievementsScreen'); startAchievements(); return; }
 }
 
 // ── Loading HTML helper ────────────────────────────────
@@ -2432,13 +3217,1017 @@ function renderPronun() {
    UPDATED startMode — routes to all new modes
 ═══════════════════════════════════════════ */
 
+function renderVariants() {
+  const el = document.getElementById('variantsContent');
+  const currentRegion = state.region || 'General';
+
+  let html = '<p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:20px">'
+    + 'All words and phrases that differ between Spanish-speaking regions. '
+    + 'Your selected region ('+(REGIONS.find(function(r){return r.id===currentRegion;})||{}).flag+' '+currentRegion+') is highlighted.</p>';
+
+  // Group by category
+  const categories = {
+    'Transport': ['car','bus','to drive'],
+    'Technology': ['computer','mobile phone','to use the internet'],
+    'Home & Life': ['apartment','swimming pool'],
+    'Food & Drink': ['orange juice','popcorn','cake','sandwich'],
+    'Slang & People': ['boy/kid','cool / great','friend','to work (hard)'],
+    'Grammar': ['you all (plural you)','you (singular informal)'],
+    'Danger Words': ['to take / to grab','pen'],
+  };
+
+  Object.keys(categories).forEach(function(cat) {
+    const entries = VARIANTS.filter(function(v){ return categories[cat].indexOf(v.en) >= 0; });
+    if (!entries.length) return;
+
+    html += '<div class="section-lbl" style="margin:16px 0 10px">'+cat+'</div>';
+    entries.forEach(function(v) {
+      html += '<div class="card" style="margin-bottom:12px;overflow:hidden">';
+      // Header
+      html += '<div style="padding:14px 16px 10px;border-bottom:1px solid var(--border)">'
+        + '<div style="font-weight:600;font-size:15px">'+v.en+'</div>'
+        + (v.warning ? '<div class="regional-warning" style="margin-top:6px;font-size:11px">'+v.warning+'</div>' : '')
+        + '</div>';
+      // All regional forms
+      html += '<div style="padding:10px 0">';
+      (v.alternates||[]).forEach(function(alt) {
+        const flag = (REGIONS.find(function(r){return r.id===alt.region;})||{}).flag||'🌍';
+        const isCurrent = alt.region === currentRegion;
+        html += '<div style="display:flex;align-items:baseline;gap:10px;padding:8px 16px;'
+          +(isCurrent?'background:rgba(47,122,200,.06);border-left:3px solid var(--accent2)':'border-left:3px solid transparent')
+          +'">'
+          + '<span style="font-size:18px;flex-shrink:0">'+flag+'</span>'
+          + '<div style="flex:1">'
+          + '<div style="font-weight:600;font-size:15px">'+alt.es+'</div>'
+          + '<div style="font-size:11px;color:var(--muted);margin-top:1px">'+alt.note+'</div>'
+          + '</div>'
+          + (isCurrent?'<span style="font-size:10px;font-weight:600;color:var(--accent2);padding:2px 8px;background:rgba(47,122,200,.1);border-radius:99px">YOUR REGION</span>':'')
+          + '</div>';
+      });
+      html += '</div></div>';
+    });
+  });
+
+  el.innerHTML = html;
+}
+
+/* ═══════════════════════════════════════════
+   SENTENCE BUILDER DATA
+═══════════════════════════════════════════ */
+const BUILDER_SENTENCES = [
+  {en:"I eat breakfast every morning.",es:"Yo como el desayuno cada mañana.",words:["Yo","como","el","desayuno","cada","mañana",".",]},
+  {en:"She works in a big office.",es:"Ella trabaja en una oficina grande.",words:["Ella","trabaja","en","una","oficina","grande","."]},
+  {en:"We go to the market on Saturdays.",es:"Nosotros vamos al mercado los sábados.",words:["Nosotros","vamos","al","mercado","los","sábados","."]},
+  {en:"The children play in the park.",es:"Los niños juegan en el parque.",words:["Los","niños","juegan","en","el","parque","."]},
+  {en:"I need a ticket to Madrid.",es:"Necesito un billete a Madrid.",words:["Necesito","un","billete","a","Madrid","."]},
+  {en:"Do you speak Spanish?",es:"¿Hablas español?",words:["¿","Hablas","español","?"]},
+  {en:"The coffee is very hot.",es:"El café está muy caliente.",words:["El","café","está","muy","caliente","."]},
+  {en:"My sister lives in Barcelona.",es:"Mi hermana vive en Barcelona.",words:["Mi","hermana","vive","en","Barcelona","."]},
+  {en:"I want a glass of water please.",es:"Quiero un vaso de agua por favor.",words:["Quiero","un","vaso","de","agua","por","favor","."]},
+  {en:"He is tired after work.",es:"Él está cansado después del trabajo.",words:["Él","está","cansado","después","del","trabajo","."]},
+  {en:"We eat dinner at nine.",es:"Cenamos a las nueve.",words:["Cenamos","a","las","nueve","."]},
+  {en:"The hotel has a swimming pool.",es:"El hotel tiene piscina.",words:["El","hotel","tiene","piscina","."]},
+  {en:"I like Spanish food very much.",es:"Me gusta mucho la comida española.",words:["Me","gusta","mucho","la","comida","española","."]},
+  {en:"She reads a book every night.",es:"Ella lee un libro cada noche.",words:["Ella","lee","un","libro","cada","noche","."]},
+  {en:"The train leaves at three.",es:"El tren sale a las tres.",words:["El","tren","sale","a","las","tres","."]},
+  {en:"I have two brothers and one sister.",es:"Tengo dos hermanos y una hermana.",words:["Tengo","dos","hermanos","y","una","hermana","."]},
+  {en:"The market is near the hotel.",es:"El mercado está cerca del hotel.",words:["El","mercado","está","cerca","del","hotel","."]},
+  {en:"Can you help me please?",es:"¿Me puedes ayudar por favor?",words:["¿","Me","puedes","ayudar","por","favor","?"]},
+  {en:"I am learning Spanish.",es:"Estoy aprendiendo español.",words:["Estoy","aprendiendo","español","."]},
+  {en:"The weather is very good today.",es:"El tiempo está muy bueno hoy.",words:["El","tiempo","está","muy","bueno","hoy","."]},
+];
+
+/* ═══════════════════════════════════════════
+   READING PASSAGES
+═══════════════════════════════════════════ */
+const PASSAGES = [
+  {
+    title:"Un día en Madrid",
+    level:"beginner",
+    topic:"Travel",
+    text:"María vive en Madrid. Cada mañana, ella toma un café en su bar favorito. Después, va al trabajo en metro. Su oficina está en el centro de la ciudad. A la hora de comer, come con sus colegas en un restaurante cerca de la oficina. Por la tarde, da un paseo por el Parque del Retiro. Le encanta ver los árboles y el lago. Por la noche, cena con su familia.",
+    vocab:[{es:"toma",en:"has/takes"},{es:"da un paseo",en:"goes for a walk"},{es:"le encanta",en:"she loves"}],
+    questions:[
+      {q:"How does María get to work?",opts:["By bus","By metro","By car","On foot"],a:1},
+      {q:"Where does she eat lunch?",opts:["At home","In the office","A restaurant nearby","In the park"],a:2},
+      {q:"What does she do in the afternoon?",opts:["Goes to the gym","Takes a walk in the park","Watches TV","Calls her family"],a:1},
+    ]
+  },
+  {
+    title:"En el mercado",
+    level:"beginner",
+    topic:"Shopping",
+    text:"Los sábados, Carlos va al mercado con su madre. El mercado tiene frutas, verduras, carne y pescado fresco. A Carlos le gustan mucho las fresas. Son rojas y muy dulces. Su madre compra tomates, cebollas y un pollo para la cena. También compran pan en la panadería. El vendedor es muy simpático y siempre sonríe. La compra cuesta veinte euros en total.",
+    vocab:[{es:"dulces",en:"sweet"},{es:"el vendedor",en:"the seller"},{es:"sonríe",en:"smiles"}],
+    questions:[
+      {q:"When does Carlos go to the market?",opts:["Every day","On Sundays","On Saturdays","On Fridays"],a:2},
+      {q:"What fruit does Carlos like?",opts:["Apples","Oranges","Strawberries","Bananas"],a:2},
+      {q:"How much does the shopping cost?",opts:["Ten euros","Fifteen euros","Twenty euros","Thirty euros"],a:2},
+    ]
+  },
+  {
+    title:"La familia González",
+    level:"beginner",
+    topic:"Family",
+    text:"La familia González tiene cinco personas: el padre, la madre y tres hijos. El padre se llama Roberto y trabaja en un banco. La madre se llama Ana y es profesora en un colegio. El hijo mayor, Miguel, tiene dieciséis años y le gusta el fútbol. La hija del medio, Sofía, tiene doce años y toca el piano. El hijo menor, Pablo, tiene ocho años y le encantan los dinosaurios.",
+    vocab:[{es:"mayor",en:"oldest"},{es:"menor",en:"youngest"},{es:"del medio",en:"middle"}],
+    questions:[
+      {q:"What does the father do?",opts:["He is a teacher","He works in a bank","He is a doctor","He works at home"],a:1},
+      {q:"Who plays the piano?",opts:["Miguel","Roberto","Pablo","Sofía"],a:3},
+      {q:"How old is the youngest child?",opts:["Six","Eight","Twelve","Sixteen"],a:1},
+    ]
+  },
+  {
+    title:"Una tarde en la playa",
+    level:"intermediate",
+    topic:"Nature",
+    text:"Era una tarde perfecta de verano. El cielo estaba despejado y el sol brillaba con fuerza. Laura y sus amigos llegaron a la playa a las cuatro. El agua estaba fría pero refrescante. Nadaron durante una hora y luego descansaron en la arena. Mientras tomaban el sol, hablaron de sus planes para el próximo verano. Al atardecer, recogieron sus cosas y fueron a tomar algo en un chiringuito junto al mar.",
+    vocab:[{es:"despejado",en:"clear (sky)"},{es:"brillaba",en:"was shining"},{es:"chiringuito",en:"beach bar"}],
+    questions:[
+      {q:"What was the weather like?",opts:["Cloudy and cold","Clear and sunny","Windy and cloudy","Rainy"],a:1},
+      {q:"How long did they swim?",opts:["Half an hour","Two hours","One hour","All afternoon"],a:2},
+      {q:"Where did they go at sunset?",opts:["A restaurant","Home","A beach bar","A hotel"],a:2},
+    ]
+  },
+  {
+    title:"Mi trabajo ideal",
+    level:"intermediate",
+    topic:"Work",
+    text:"Desde pequeño, Andrés siempre quiso ser médico. Estudió medicina durante seis años en la universidad y después hizo una especialización en pediatría. Ahora trabaja en un hospital público en Sevilla. Le encanta su trabajo porque puede ayudar a los niños y a sus familias. Aunque el trabajo es duro y a veces llega a casa muy cansado, siente que hace algo importante. Su sueldo no es muy alto, pero la satisfacción personal vale más que el dinero.",
+    vocab:[{es:"desde pequeño",en:"from a young age"},{es:"pediatría",en:"paediatrics"},{es:"vale más",en:"is worth more"}],
+    questions:[
+      {q:"What did Andrés want to be from a young age?",opts:["A teacher","A lawyer","A doctor","An engineer"],a:2},
+      {q:"Where does he work now?",opts:["A private clinic","A school","A public hospital","A pharmacy"],a:2},
+      {q:"What does he value more than salary?",opts:["Free time","Personal satisfaction","Holidays","His colleagues"],a:1},
+    ]
+  },
+];
+
+/* ═══════════════════════════════════════════
+   WRITING / TRANSLATION EXERCISES
+═══════════════════════════════════════════ */
+const WRITING_EX = [
+  {en:"I am very tired today.",es:"Estoy muy cansado hoy.",keys:["estoy","cansado","hoy"],hint:"Use estar for temporary states."},
+  {en:"She has two cats and a dog.",es:"Ella tiene dos gatos y un perro.",keys:["tiene","gatos","perro"],hint:"Tener = to have."},
+  {en:"We go to school every day.",es:"Vamos al colegio todos los días.",keys:["vamos","colegio","días"],hint:"Al = a + el (contraction)."},
+  {en:"The restaurant is very expensive.",es:"El restaurante es muy caro.",keys:["restaurante","caro"],hint:"Use ser for characteristics."},
+  {en:"I want to learn Spanish.",es:"Quiero aprender español.",keys:["quiero","aprender"],hint:"Quiero = I want (from querer)."},
+  {en:"How are you? I am fine, thank you.",es:"¿Cómo estás? Estoy bien, gracias.",keys:["cómo","estás","bien","gracias"],hint:"Use estar for how you feel."},
+  {en:"My father works in an office.",es:"Mi padre trabaja en una oficina.",keys:["padre","trabaja","oficina"],hint:"-ar verbs: yo trabajo, tú trabajas, él trabaja."},
+  {en:"I like the music very much.",es:"Me gusta mucho la música.",keys:["gusta","música"],hint:"Gustar works backwards: Me gusta = it pleases me."},
+  {en:"Do you speak English?",es:"¿Hablas inglés?",keys:["hablas","inglés"],hint:"Drop the subject pronoun — tú is implied."},
+  {en:"The children are in the park.",es:"Los niños están en el parque.",keys:["niños","están","parque"],hint:"Use estar for location."},
+  {en:"I need to buy a train ticket.",es:"Necesito comprar un billete de tren.",keys:["necesito","billete","tren"],hint:"Necesito = I need (from necesitar)."},
+  {en:"She is a very good teacher.",es:"Ella es una profesora muy buena.",keys:["profesora","buena"],hint:"Use ser for professions and characteristics."},
+  {en:"We eat lunch at two in the afternoon.",es:"Comemos a las dos de la tarde.",keys:["comemos","tarde"],hint:"-er verbs: nosotros form ends in -emos."},
+  {en:"The weather is bad today.",es:"El tiempo está malo hoy.",keys:["tiempo","malo","hoy"],hint:"Weather uses hacer or estar in Spanish."},
+  {en:"I have lived in Spain for three years.",es:"Llevo tres años viviendo en España.",keys:["llevo","años","España"],hint:"Llevar + gerund = to have been doing something for a period."},
+];
+
+/* ═══════════════════════════════════════════
+   VERB CONJUGATION DATA
+═══════════════════════════════════════════ */
+const VERBS = [
+  {inf:"hablar",en:"to speak",type:"ar",
+   forms:{yo:"hablo",tú:"hablas",él:"habla",nosotros:"hablamos",vosotros:"habláis",ellos:"hablan"}},
+  {inf:"comer",en:"to eat",type:"er",
+   forms:{yo:"como",tú:"comes",él:"come",nosotros:"comemos",vosotros:"coméis",ellos:"comen"}},
+  {inf:"vivir",en:"to live",type:"ir",
+   forms:{yo:"vivo",tú:"vives",él:"vive",nosotros:"vivimos",vosotros:"vivís",ellos:"viven"}},
+  {inf:"ser",en:"to be (permanent)",type:"irregular",
+   forms:{yo:"soy",tú:"eres",él:"es",nosotros:"somos",vosotros:"sois",ellos:"son"}},
+  {inf:"estar",en:"to be (temporary)",type:"irregular",
+   forms:{yo:"estoy",tú:"estás",él:"está",nosotros:"estamos",vosotros:"estáis",ellos:"están"}},
+  {inf:"tener",en:"to have",type:"irregular",
+   forms:{yo:"tengo",tú:"tienes",él:"tiene",nosotros:"tenemos",vosotros:"tenéis",ellos:"tienen"}},
+  {inf:"ir",en:"to go",type:"irregular",
+   forms:{yo:"voy",tú:"vas",él:"va",nosotros:"vamos",vosotros:"vais",ellos:"van"}},
+  {inf:"hacer",en:"to do / make",type:"irregular",
+   forms:{yo:"hago",tú:"haces",él:"hace",nosotros:"hacemos",vosotros:"hacéis",ellos:"hacen"}},
+  {inf:"poder",en:"to be able to / can",type:"irregular",
+   forms:{yo:"puedo",tú:"puedes",él:"puede",nosotros:"podemos",vosotros:"podéis",ellos:"pueden"}},
+  {inf:"querer",en:"to want / love",type:"irregular",
+   forms:{yo:"quiero",tú:"quieres",él:"quiere",nosotros:"queremos",vosotros:"queréis",ellos:"quieren"}},
+  {inf:"venir",en:"to come",type:"irregular",
+   forms:{yo:"vengo",tú:"vienes",él:"viene",nosotros:"venimos",vosotros:"venís",ellos:"vienen"}},
+  {inf:"decir",en:"to say / tell",type:"irregular",
+   forms:{yo:"digo",tú:"dices",él:"dice",nosotros:"decimos",vosotros:"decís",ellos:"dicen"}},
+  {inf:"saber",en:"to know (facts)",type:"irregular",
+   forms:{yo:"sé",tú:"sabes",él:"sabe",nosotros:"sabemos",vosotros:"sabéis",ellos:"saben"}},
+  {inf:"conocer",en:"to know (people/places)",type:"irregular",
+   forms:{yo:"conozco",tú:"conoces",él:"conoce",nosotros:"conocemos",vosotros:"conocéis",ellos:"conocen"}},
+  {inf:"dar",en:"to give",type:"irregular",
+   forms:{yo:"doy",tú:"das",él:"da",nosotros:"damos",vosotros:"dais",ellos:"dan"}},
+  {inf:"ver",en:"to see",type:"irregular",
+   forms:{yo:"veo",tú:"ves",él:"ve",nosotros:"vemos",vosotros:"veis",ellos:"ven"}},
+  {inf:"poner",en:"to put / place",type:"irregular",
+   forms:{yo:"pongo",tú:"pones",él:"pone",nosotros:"ponemos",vosotros:"ponéis",ellos:"ponen"}},
+  {inf:"llevar",en:"to carry / wear / take",type:"ar",
+   forms:{yo:"llevo",tú:"llevas",él:"lleva",nosotros:"llevamos",vosotros:"lleváis",ellos:"llevan"}},
+  {inf:"trabajar",en:"to work",type:"ar",
+   forms:{yo:"trabajo",tú:"trabajas",él:"trabaja",nosotros:"trabajamos",vosotros:"trabajáis",ellos:"trabajan"}},
+  {inf:"necesitar",en:"to need",type:"ar",
+   forms:{yo:"necesito",tú:"necesitas",él:"necesita",nosotros:"necesitamos",vosotros:"necesitáis",ellos:"necesitan"}},
+];
+
+/* ═══════════════════════════════════════════
+   ACHIEVEMENTS DATA
+═══════════════════════════════════════════ */
+const ACHIEVEMENTS = [
+  {id:"first_card",  em:"🃏", name:"First Card",       desc:"Complete your first flashcard",           check:function(s){return (s.totalAnswered||0)>=1;}},
+  {id:"streak3",     em:"🔥", name:"3-Day Streak",     desc:"Study 3 days in a row",                   check:function(s){return (s.streak||0)>=3;}},
+  {id:"streak7",     em:"🌟", name:"Week Warrior",     desc:"Study 7 days in a row",                   check:function(s){return (s.streak||0)>=7;}},
+  {id:"streak30",    em:"👑", name:"Month Master",     desc:"Study 30 days in a row",                  check:function(s){return (s.streak||0)>=30;}},
+  {id:"words10",     em:"📖", name:"Word Collector",   desc:"Master 10 vocabulary words",              check:function(s){return Object.values(s.vocab||{}).filter(function(v){return (v.level||0)>=4;}).length>=10;}},
+  {id:"words50",     em:"📚", name:"Vocab Builder",    desc:"Master 50 vocabulary words",              check:function(s){return Object.values(s.vocab||{}).filter(function(v){return (v.level||0)>=4;}).length>=50;}},
+  {id:"xp100",       em:"⭐", name:"Rising Star",      desc:"Earn 100 XP",                             check:function(s){return (s.xpTotal||0)>=100;}},
+  {id:"xp500",       em:"💫", name:"XP Champion",      desc:"Earn 500 XP",                             check:function(s){return (s.xpTotal||0)>=500;}},
+  {id:"xp1000",      em:"✨", name:"XP Legend",        desc:"Earn 1000 XP",                            check:function(s){return (s.xpTotal||0)>=1000;}},
+  {id:"accuracy80",  em:"🎯", name:"Sharp Shooter",    desc:"Reach 80% accuracy",                      check:function(s){return (s.totalAnswered||0)>=20 && Math.round((s.totalCorrect||0)/(s.totalAnswered||1)*100)>=80;}},
+  {id:"sessions10",  em:"📅", name:"Dedicated Learner",desc:"Complete 10 practice sessions",           check:function(s){return (s.totalSessions||0)>=10;}},
+  {id:"builder5",    em:"🧩", name:"Builder",          desc:"Complete 5 sentence builder exercises",   check:function(s){return (s.builderDone||0)>=5;}},
+  {id:"reading3",    em:"📰", name:"Reader",           desc:"Complete 3 reading passages",             check:function(s){return (s.readingDone||0)>=3;}},
+  {id:"verbs10",     em:"🔤", name:"Verb Virtuoso",    desc:"Drill 10 verb conjugations correctly",    check:function(s){return (s.verbsCorrect||0)>=10;}},
+  {id:"custom5",     em:"✏️", name:"My Words",         desc:"Add 5 words to your personal word bank",  check:function(s){return (s.customVocab||[]).length>=5;}},
+  {id:"day30",       em:"🏆", name:"30-Day Champion",  desc:"Complete the 30-day learning plan",       check:function(s){return (s.dayPlan||0)>=30;}},
+];
+
+/* ═══════════════════════════════════════════
+   30-DAY PLAN
+═══════════════════════════════════════════ */
+const PLAN = [
+  {day:1, title:"First Words", desc:"Flashcards: Travel basics + Daily Lesson", modes:["flash","daily"], topic:"Travel"},
+  {day:2, title:"Greetings & Phrases", desc:"Phrases + Fill-in-blank", modes:["phrases","cloze"], topic:"Social"},
+  {day:3, title:"Build a Sentence", desc:"Sentence Builder + Grammar Quiz", modes:["builder","grammar"], topic:"Travel"},
+  {day:4, title:"Listen Up", desc:"Listen & Type + Reading passage", modes:["listen","reading"], topic:"Travel"},
+  {day:5, title:"Write It Out", desc:"Writing practice + Vocabulary review", modes:["writing","flash"], topic:"Social"},
+  {day:6, title:"Food & Drink", desc:"Daily Lesson: Food topic", modes:["daily","flash"], topic:"Food"},
+  {day:7, title:"Week 1 Review", desc:"Grammar Quiz + Verb Drills", modes:["grammar","verbs"], topic:"Food"},
+  {day:8, title:"Family Matters", desc:"Flashcards + Sentence Builder", modes:["flash","builder"], topic:"Family"},
+  {day:9, title:"Reading Day", desc:"Reading passage + Fill-in-blank", modes:["reading","cloze"], topic:"Family"},
+  {day:10, title:"Verb Focus: Ser & Estar", desc:"Verb Drills + Writing", modes:["verbs","writing"], topic:"Family"},
+  {day:11, title:"Work Life", desc:"Daily Lesson: Work topic", modes:["daily","flash"], topic:"Work"},
+  {day:12, title:"Listen & Write", desc:"Listen & Type + Writing practice", modes:["listen","writing"], topic:"Work"},
+  {day:13, title:"Shopping Spanish", desc:"Phrases + Sentence Builder", modes:["phrases","builder"], topic:"Shopping"},
+  {day:14, title:"Week 2 Review", desc:"Full Daily Lesson + Grammar Quiz", modes:["daily","grammar"], topic:"Shopping"},
+  {day:15, title:"Feelings & Emotions", desc:"Flashcards + Fill-in-blank", modes:["flash","cloze"], topic:"Feelings"},
+  {day:16, title:"Time & Expressions", desc:"Daily Lesson + Writing", modes:["daily","writing"], topic:"Time"},
+  {day:17, title:"Health Vocabulary", desc:"Flashcards + Listen & Type", modes:["flash","listen"], topic:"Health"},
+  {day:18, title:"Reading Challenge", desc:"Two reading passages", modes:["reading","reading"], topic:"Health"},
+  {day:19, title:"Verb Blitz", desc:"Verb Drills: ir, tener, hacer", modes:["verbs","grammar"], topic:"Work"},
+  {day:20, title:"Social Spanish", desc:"Phrases + Sentence Builder", modes:["phrases","builder"], topic:"Social"},
+  {day:21, title:"Week 3 Review", desc:"Daily Lesson + All modes sample", modes:["daily","flash"], topic:"Social"},
+  {day:22, title:"Nature & Animals", desc:"Flashcards + Fill-in-blank", modes:["flash","cloze"], topic:"Nature"},
+  {day:23, title:"Home & Family", desc:"Daily Lesson + Writing", modes:["daily","writing"], topic:"Home"},
+  {day:24, title:"Regional Variants", desc:"Explore regional differences", modes:["variants","phrases"], topic:"Travel"},
+  {day:25, title:"Speed Round", desc:"Speed flashcards + Grammar Quiz", modes:["flash","grammar"], topic:"Food"},
+  {day:26, title:"Reverse Challenge", desc:"Reverse flashcards + Sentence Builder", modes:["flash","builder"], topic:"Work"},
+  {day:27, title:"Full Listening Day", desc:"Listen & Type + Reading", modes:["listen","reading"], topic:"Nature"},
+  {day:28, title:"Writing Marathon", desc:"5 writing exercises", modes:["writing","writing"], topic:"Social"},
+  {day:29, title:"Verb Master", desc:"All verb drills + conjugation quiz", modes:["verbs","grammar"], topic:"Family"},
+  {day:30, title:"Graduation Day!", desc:"Full Daily Lesson + Achievement unlock", modes:["daily","achievements"], topic:"Travel"},
+];
+
+/* ═══════════════════════════════════════════
+   ACHIEVEMENTS ENGINE
+═══════════════════════════════════════════ */
+function checkAchievements() {
+  var newlyEarned = [];
+  ACHIEVEMENTS.forEach(function(a) {
+    if (!state.achievements[a.id] && a.check(state)) {
+      state.achievements[a.id] = Date.now();
+      newlyEarned.push(a);
+    }
+  });
+  if (newlyEarned.length) {
+    save();
+    newlyEarned.forEach(function(a, i) {
+      setTimeout(function(){ showAchievementToast(a); }, i * 2000);
+    });
+    updateAchieveBadge();
+  }
+}
+
+function showAchievementToast(a) {
+  var t = document.getElementById('achievementToast');
+  var em = document.getElementById('toastEm');
+  var title = document.getElementById('toastTitle');
+  var desc = document.getElementById('toastDesc');
+  if (!t) return;
+  em.textContent = a.em;
+  title.textContent = 'Achievement Unlocked: ' + a.name;
+  desc.textContent = a.desc;
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 3500);
+}
+
+function updateAchieveBadge() {
+  var count = Object.keys(state.achievements||{}).length;
+  var b = document.getElementById('achieveBadge');
+  if (b) b.textContent = count + '/' + ACHIEVEMENTS.length;
+}
+
+function updateWordBankBadge() {
+  var count = (state.customVocab||[]).length;
+  var b = document.getElementById('wordBankBadge');
+  if (b) { b.textContent = count; b.style.display = count > 0 ? '' : 'none'; }
+}
+
+function updatePlanBadge() {
+  var day = Math.min((state.dayPlan||0) + 1, 30);
+  var b = document.getElementById('planBadge');
+  if (b) b.textContent = 'Day ' + day;
+}
+
+/* ═══════════════════════════════════════════
+   SENTENCE BUILDER
+═══════════════════════════════════════════ */
+var builderDeck = [], builderIdx = 0, builderScore = 0, builderAnswer = [];
+
+function startBuilder() {
+  builderDeck = shuffle([].concat(BUILDER_SENTENCES)).slice(0, 8);
+  builderIdx = 0; builderScore = 0;
+  resetSession('Sentence Builder');
+  renderBuilder();
+}
+
+function renderBuilder() {
+  var el = document.getElementById('builderContent');
+  if (builderIdx >= builderDeck.length) {
+    state.builderDone = (state.builderDone||0) + builderScore;
+    save(); checkAchievements();
+    el.innerHTML = resultHTML('🧩','Well done!', builderScore + ' of ' + builderDeck.length + ' correct.', builderScore*5, 'startBuilder()', 'Try Again');
+    setTimeout(function(){ showSummary('Sentence Builder', builderScore*5); }, 400);
+    return;
+  }
+  var q = builderDeck[builderIdx];
+  var pct = Math.round(builderIdx/builderDeck.length*100);
+  var shuffledWords = shuffle([].concat(q.words));
+  builderAnswer = [];
+
+  el.innerHTML = '<div style="display:flex;flex-direction:column;gap:14px;padding-top:4px">'
+    + '<div class="pbar-wrap"><div class="pbar"><div class="pbar-fill" style="width:'+pct+'%"></div></div><div class="pbar-lbl">'+(builderIdx+1)+'/'+builderDeck.length+'</div></div>'
+    + '<div class="card" style="padding:16px"><div class="card-hint">Translate into Spanish</div><div style="font-size:18px;font-weight:600;margin-top:6px">'+q.en+'</div></div>'
+    + '<div class="section-lbl">Your answer (tap words to add)</div>'
+    + '<div class="answer-area" id="answerArea" onclick=""><div class="answer-area-hint" id="answerHint">Tap words below to build your sentence</div></div>'
+    + '<div class="section-lbl">Word bank</div>'
+    + '<div class="word-bank" id="wordBank"></div>'
+    + '<div class="cloze-feedback" id="builderFb"></div>'
+    + '<div style="display:flex;gap:10px">'
+    + '<button class="btn btn-secondary" onclick="clearBuilderAnswer()" style="flex:0 0 auto;width:auto;padding:14px 20px">Clear</button>'
+    + '<button class="btn btn-primary" id="checkBuilderBtn" onclick="checkBuilder()">Check Answer</button>'
+    + '</div>'
+    + '<button class="btn btn-secondary hidden" id="builderNext" onclick="nextBuilder()" style="margin-top:4px">Next →</button>'
+    + '</div>';
+
+  var wb = document.getElementById('wordBank');
+  shuffledWords.forEach(function(word, i) {
+    var tile = document.createElement('button');
+    tile.className = 'word-tile';
+    tile.textContent = word;
+    tile.id = 'wt'+i;
+    tile.onclick = function() { addWordToAnswer(word, i, tile); };
+    wb.appendChild(tile);
+  });
+}
+
+function addWordToAnswer(word, idx, tile) {
+  if (tile.classList.contains('used')) return;
+  tile.classList.add('used');
+  builderAnswer.push({word:word, tileId:'wt'+idx});
+  var area = document.getElementById('answerArea');
+  var hint = document.getElementById('answerHint');
+  if (hint) hint.style.display = 'none';
+  var atile = document.createElement('span');
+  atile.className = 'answer-tile';
+  atile.textContent = word;
+  atile.onclick = function() {
+    // Remove from answer, restore tile
+    builderAnswer = builderAnswer.filter(function(a){ return a.word !== word || a.tileId !== 'wt'+idx; });
+    atile.remove();
+    tile.classList.remove('used');
+    if (document.getElementById('answerArea').querySelectorAll('.answer-tile').length === 0) {
+      document.getElementById('answerHint').style.display = '';
+    }
+  };
+  area.appendChild(atile);
+}
+
+function clearBuilderAnswer() {
+  builderAnswer = [];
+  var area = document.getElementById('answerArea');
+  area.querySelectorAll('.answer-tile').forEach(function(t){ t.remove(); });
+  document.getElementById('answerHint').style.display = '';
+  document.querySelectorAll('.word-tile').forEach(function(t){ t.classList.remove('used'); });
+}
+
+function checkBuilder() {
+  var q = builderDeck[builderIdx];
+  var userAnswer = builderAnswer.map(function(a){ return a.word; }).join(' ');
+  var correct = userAnswer.trim() === q.es.trim();
+
+  // Accept answer ignoring punctuation if close
+  var cleanUser = userAnswer.replace(/[¿¡.,?!]/g,'').trim().toLowerCase();
+  var cleanCorrect = q.es.replace(/[¿¡.,?!]/g,'').trim().toLowerCase();
+  var isCorrect = cleanUser === cleanCorrect;
+
+  document.getElementById('checkBuilderBtn').disabled = true;
+  document.getElementById('builderNext').classList.remove('hidden');
+
+  var fb = document.getElementById('builderFb');
+  if (isCorrect) {
+    builderScore++;
+    state.totalCorrect = (state.totalCorrect||0)+1;
+    addXP(5);
+    fb.className = 'cloze-feedback correct show';
+    fb.innerHTML = '✓ Perfect! <strong>' + q.es + '</strong>';
+  } else {
+    fb.className = 'cloze-feedback wrong show';
+    fb.innerHTML = '✗ The correct sentence is:<br><strong>' + q.es + '</strong>';
+  }
+  trackAnswer(q.en, q.es, isCorrect, 'Sentence Builder');
+  state.totalAnswered = (state.totalAnswered||0)+1;
+  save();
+}
+
+function nextBuilder() { builderIdx++; renderBuilder(); }
+
+/* ═══════════════════════════════════════════
+   READING PASSAGES
+═══════════════════════════════════════════ */
+var readingIdx = 0, readingPassage = null, readingQIdx = 0, readingScore = 0;
+
+function startReading() {
+  var available = PASSAGES.filter(function(p){
+    return p.topic === state.topic || true; // show all for now
+  });
+  readingPassage = available[Math.floor(Math.random() * available.length)];
+  readingQIdx = 0; readingScore = 0;
+  resetSession('Reading');
+  renderReading();
+}
+
+function renderReading() {
+  var el = document.getElementById('readingContent');
+  var p = readingPassage;
+
+  // Highlight vocab words in passage
+  var text = p.text;
+  p.vocab.forEach(function(v) {
+    text = text.replace(new RegExp(v.es, 'g'),
+      '<span class="hl" title="'+v.en+'">'+v.es+'</span>');
+  });
+
+  el.innerHTML = '<div style="display:flex;flex-direction:column;gap:14px;padding-top:4px">'
+    + '<div class="card" style="padding:16px 18px">'
+    + '<div style="font-size:11px;color:var(--accent2);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">'+p.level+' · '+p.topic+'</div>'
+    + '<div style="font-family:Playfair Display,serif;font-size:20px;font-weight:700;margin-bottom:14px">'+p.title+'</div>'
+    + '<div class="passage-text">'+text+'</div>'
+    + '<div style="font-size:12px;color:var(--muted);margin-top:4px">💡 Tap highlighted words to see their meaning</div>'
+    + '</div>'
+    + '<div class="section-lbl">Key Vocabulary</div>'
+    + '<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:4px">'
+    + p.vocab.map(function(v){
+        return '<div style="display:flex;justify-content:space-between;padding:8px 12px;background:var(--surface);border-radius:10px;border:1.5px solid var(--border)">'
+          + '<span style="font-weight:600">'+v.es+'</span><span style="color:var(--muted)">'+v.en+'</span></div>';
+      }).join('')
+    + '</div>'
+    + '<button class="btn btn-primary" onclick="startReadingQuiz()">Answer Questions →</button>'
+    + '</div>';
+}
+
+function startReadingQuiz() {
+  readingQIdx = 0;
+  renderReadingQuestion();
+}
+
+function renderReadingQuestion() {
+  var el = document.getElementById('readingContent');
+  var p = readingPassage;
+  if (readingQIdx >= p.questions.length) {
+    state.readingDone = (state.readingDone||0) + 1;
+    save(); checkAchievements();
+    var xp = readingScore * 6;
+    el.innerHTML = resultHTML('📖', 'Reading complete!', readingScore+' of '+p.questions.length+' questions correct.', xp, 'startReading()', 'New Passage');
+    setTimeout(function(){ showSummary('Reading', xp); addXP(xp); }, 400);
+    return;
+  }
+  var q = p.questions[readingQIdx];
+  var pct = Math.round(readingQIdx/p.questions.length*100);
+
+  el.innerHTML = '<div style="display:flex;flex-direction:column;gap:14px;padding-top:4px">'
+    + '<div class="pbar-wrap"><div class="pbar"><div class="pbar-fill" style="width:'+pct+'%"></div></div><div class="pbar-lbl">'+(readingQIdx+1)+'/'+p.questions.length+'</div></div>'
+    + '<div style="display:flex;gap:6px;margin-bottom:4px">'
+    + p.questions.map(function(_,i){
+        return '<div class="rp-dot'+(i<readingQIdx?' done':i===readingQIdx?' current':'')+'"></div>';
+      }).join('')
+    + '</div>'
+    + '<div class="card" style="padding:18px">'
+    + '<div class="passage-q">'+q.q+'</div>'
+    + '<div class="quiz-opts" id="readingOpts"></div>'
+    + '<div class="cloze-feedback" id="readingFb"></div>'
+    + '</div>'
+    + '<button class="btn btn-secondary hidden" id="readingNext" onclick="nextReadingQ()">Next →</button>'
+    + '</div>';
+
+  var optsEl = document.getElementById('readingOpts');
+  q.opts.forEach(function(opt, i) {
+    var btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.textContent = opt;
+    btn.onclick = function() { answerReading(i, q); };
+    optsEl.appendChild(btn);
+  });
+}
+
+function answerReading(chosen, q) {
+  document.querySelectorAll('#readingOpts .quiz-opt').forEach(function(b){ b.disabled = true; });
+  var correct = chosen === q.a;
+  document.querySelectorAll('#readingOpts .quiz-opt')[q.a].classList.add('correct');
+  if (!correct) document.querySelectorAll('#readingOpts .quiz-opt')[chosen].classList.add('wrong');
+  if (correct) { readingScore++; state.totalCorrect=(state.totalCorrect||0)+1; addXP(6); }
+  state.totalAnswered=(state.totalAnswered||0)+1;
+  var fb = document.getElementById('readingFb');
+  fb.className = 'cloze-feedback '+(correct?'correct':'wrong')+' show';
+  fb.textContent = correct ? '✓ Correct!' : '✗ The answer is: ' + q.opts[q.a];
+  document.getElementById('readingNext').classList.remove('hidden');
+  save();
+}
+
+function nextReadingQ() { readingQIdx++; renderReadingQuestion(); }
+
+/* ═══════════════════════════════════════════
+   WRITING / TRANSLATION
+═══════════════════════════════════════════ */
+var writingDeck = [], writingIdx = 0, writingScore = 0;
+
+function startWriting() {
+  writingDeck = shuffle([].concat(WRITING_EX)).slice(0, 8);
+  writingIdx = 0; writingScore = 0;
+  resetSession('Writing');
+  renderWriting();
+}
+
+function renderWriting() {
+  var el = document.getElementById('writingContent');
+  if (writingIdx >= writingDeck.length) {
+    save(); checkAchievements();
+    el.innerHTML = resultHTML('✍️','Writing complete!', writingScore+' of '+writingDeck.length+' correct.', writingScore*5, 'startWriting()', 'Try Again');
+    setTimeout(function(){ showSummary('Writing Practice', writingScore*5); }, 400);
+    return;
+  }
+  var q = writingDeck[writingIdx];
+  var pct = Math.round(writingIdx/writingDeck.length*100);
+
+  el.innerHTML = '<div style="display:flex;flex-direction:column;gap:14px;padding-top:4px">'
+    + '<div class="pbar-wrap"><div class="pbar"><div class="pbar-fill" style="width:'+pct+'%"></div></div><div class="pbar-lbl">'+(writingIdx+1)+'/'+writingDeck.length+'</div></div>'
+    + '<div class="card" style="padding:18px">'
+    + '<div class="card-hint">Translate into Spanish</div>'
+    + '<div style="font-size:20px;font-weight:600;margin:10px 0;font-family:Playfair Display,serif">'+q.en+'</div>'
+    + '<div style="font-size:12px;color:var(--muted);margin-bottom:14px">💡 '+q.hint+'</div>'
+    + '<textarea class="writing-input" id="writingAns" placeholder="Type your Spanish translation here…"></textarea>'
+    + '<button class="btn btn-primary" onclick="checkWriting()" style="margin-top:8px">Check Answer</button>'
+    + '<div class="writing-feedback" id="writingFb" style="display:none"></div>'
+    + '</div>'
+    + '<button class="btn btn-secondary hidden" id="writingNext" onclick="nextWriting()" style="margin-top:4px">Next →</button>'
+    + '</div>';
+
+  setTimeout(function(){ var el=document.getElementById('writingAns'); if(el) el.focus(); }, 100);
+}
+
+function checkWriting() {
+  var q = writingDeck[writingIdx];
+  var ans = (document.getElementById('writingAns').value||'').trim().toLowerCase();
+  var correct = stripAccents(ans) === stripAccents(q.es.toLowerCase());
+
+  // Partial credit: check key words
+  var keyMatches = q.keys.filter(function(k){
+    return stripAccents(ans).indexOf(stripAccents(k.toLowerCase())) >= 0;
+  });
+  var partial = !correct && keyMatches.length >= Math.ceil(q.keys.length * 0.6);
+
+  document.getElementById('writingAns').disabled = true;
+  document.querySelector('#writingContent .btn-primary').disabled = true;
+  document.getElementById('writingNext').classList.remove('hidden');
+
+  var fb = document.getElementById('writingFb');
+  fb.style.display = 'block';
+
+  if (correct) {
+    writingScore++; state.totalCorrect=(state.totalCorrect||0)+1; addXP(5);
+    fb.className = 'writing-feedback correct';
+    fb.innerHTML = '✓ Perfect! <strong>' + q.es + '</strong>';
+  } else if (partial) {
+    writingScore += 0.5; addXP(3);
+    fb.className = 'writing-feedback partial';
+    fb.innerHTML = 'Almost! The full answer: <strong>'+q.es+'</strong>'
+      + '<div class="key-words" style="margin-top:8px">'
+      + q.keys.map(function(k){
+          var hit = stripAccents(ans).indexOf(stripAccents(k.toLowerCase())) >= 0;
+          return '<span class="kw" style="'+(hit?'border-color:var(--green);color:var(--green)':'border-color:var(--accent);color:var(--accent)')+'">'+k+'</span>';
+        }).join('')
+      + '</div>';
+  } else {
+    fb.className = 'writing-feedback wrong';
+    fb.innerHTML = '✗ The answer is: <strong>'+q.es+'</strong>'
+      + '<div style="font-size:12px;margin-top:6px;color:var(--muted)">Key words: '
+      + q.keys.map(function(k){ return '<em>'+k+'</em>'; }).join(', ') + '</div>';
+  }
+
+  trackAnswer(q.en, q.es, correct||partial, 'Writing');
+  state.totalAnswered=(state.totalAnswered||0)+1;
+  save();
+}
+
+function nextWriting() { writingIdx++; renderWriting(); }
+
+/* ═══════════════════════════════════════════
+   VERB DRILLS
+═══════════════════════════════════════════ */
+var verbDeck = [], verbIdx = 0, verbScore = 0, currentVerb = null, verbPronoun = null;
+
+function startVerbs() {
+  verbDeck = shuffle([].concat(VERBS)).slice(0, 6);
+  verbIdx = 0; verbScore = 0;
+  resetSession('Verb Drills');
+  renderVerbIntro();
+}
+
+function renderVerbIntro() {
+  var el = document.getElementById('verbsContent');
+  el.innerHTML = '<div style="display:flex;flex-direction:column;gap:14px;padding-top:4px">'
+    + '<div class="card" style="padding:18px">'
+    + '<div style="font-family:Playfair Display,serif;font-size:20px;font-weight:700;margin-bottom:8px">How Verb Drills Work</div>'
+    + '<p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:16px">You will be shown a verb + pronoun. Type the correct conjugation. Accents are accepted but not required.</p>'
+    + '<div style="background:var(--surface2);border-radius:12px;padding:14px;font-size:13px;line-height:1.8">'
+    + '<strong>Example:</strong> hablar + yo → <strong>hablo</strong><br>'
+    + 'hablar + tú → <strong>hablas</strong><br>'
+    + 'hablar + nosotros → <strong>hablamos</strong>'
+    + '</div>'
+    + '</div>'
+    + '<button class="btn btn-primary" onclick="renderVerbDrill()">Start Drilling →</button>'
+    + '</div>';
+}
+
+function renderVerbDrill() {
+  var el = document.getElementById('verbsContent');
+  if (verbIdx >= verbDeck.length) {
+    state.verbsCorrect = (state.verbsCorrect||0) + verbScore;
+    save(); checkAchievements();
+    el.innerHTML = resultHTML('🔤','Verb Drills done!', verbScore+' forms correct.', verbScore*4, 'startVerbs()', 'Drill Again');
+    setTimeout(function(){ showSummary('Verb Drills', verbScore*4); }, 400);
+    return;
+  }
+  currentVerb = verbDeck[verbIdx];
+  var pronouns = ['yo','tú','él','nosotros','vosotros','ellos'];
+  verbPronoun = pronouns[Math.floor(Math.random() * pronouns.length)];
+  var pct = Math.round(verbIdx/verbDeck.length*100);
+
+  el.innerHTML = '<div style="display:flex;flex-direction:column;gap:14px;padding-top:4px">'
+    + '<div class="pbar-wrap"><div class="pbar"><div class="pbar-fill" style="width:'+pct+'%"></div></div><div class="pbar-lbl">'+(verbIdx+1)+'/'+verbDeck.length+'</div></div>'
+    + '<div class="card" style="padding:20px">'
+    + '<div style="font-size:12px;color:var(--muted);margin-bottom:6px">Conjugate the verb</div>'
+    + '<div style="font-family:Playfair Display,serif;font-size:28px;font-weight:700;color:var(--accent);margin-bottom:4px">'+currentVerb.inf+'</div>'
+    + '<div style="font-size:15px;color:var(--muted);margin-bottom:20px">'+currentVerb.en+' · <span style="color:var(--text);font-weight:500">'+currentVerb.type+'</span></div>'
+    + '<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">'
+    + '<span style="font-size:18px;font-weight:600;color:var(--accent2);min-width:80px">'+verbPronoun+'</span>'
+        + '<input class="conj-input" id="conjInput" placeholder="conjugation…">'    + '</div>'
+    + '<button class="btn btn-primary" onclick="checkVerb()">Check</button>'
+    + '<div class="cloze-feedback" id="verbFb"></div>'
+    + '</div>'
+    + '<div class="card" style="padding:16px;margin-top:4px">'
+    + '<div style="font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;margin-bottom:10px">Full conjugation</div>'
+    + '<table class="verb-table">'
+    + '<tr><th>Pronoun</th><th>Form</th></tr>'
+    + Object.entries(currentVerb.forms).map(function(e){
+        var highlight = e[0] === verbPronoun;
+        return '<tr><td>'+(highlight?'<strong style="color:var(--accent2)">':'')+e[0]+(highlight?'</strong>':'')+'</td>'
+          + '<td><span class="verb-highlight" style="filter:blur('+(highlight?'0':'5')+'px)" id="vf_'+e[0]+'">'+e[1]+'</span></td></tr>';
+      }).join('')
+    + '</table>'
+    + '<button onclick="revealConjugation()" style="font-size:12px;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px 0;font-family:inherit">👁 Reveal all forms</button>'
+    + '</div>'
+    + '<button class="btn btn-secondary hidden" id="verbNext" onclick="nextVerb()">Next →</button>'
+    + '</div>';
+
+  setTimeout(function(){
+    var inp=document.getElementById('conjInput');
+    if(inp) {
+      inp.focus();
+      inp.addEventListener('keydown', function(e){ if(e.key==='Enter') checkVerb(); });
+    }
+  }, 100);
+}
+
+function checkVerb() {
+  var ans = stripAccents((document.getElementById('conjInput').value||'').trim().toLowerCase());
+  var correct = stripAccents(currentVerb.forms[verbPronoun].toLowerCase());
+  var isCorrect = ans === correct;
+
+  document.getElementById('conjInput').disabled = true;
+  document.querySelector('#verbsContent .btn-primary').disabled = true;
+  document.getElementById('verbNext').classList.remove('hidden');
+
+  // Reveal the answer and unblur
+  document.getElementById('vf_'+verbPronoun).style.filter = 'none';
+
+  var input = document.getElementById('conjInput');
+  input.classList.add(isCorrect ? 'ok' : 'bad');
+  if (!isCorrect) input.value = currentVerb.forms[verbPronoun];
+
+  var fb = document.getElementById('verbFb');
+  fb.className = 'cloze-feedback '+(isCorrect?'correct':'wrong')+' show';
+  fb.textContent = isCorrect ? '✓ Correct! ' + verbPronoun + ' ' + currentVerb.forms[verbPronoun]
+    : '✗ ' + verbPronoun + ' ' + currentVerb.inf + ' → ' + currentVerb.forms[verbPronoun];
+
+  if (isCorrect) { verbScore++; state.totalCorrect=(state.totalCorrect||0)+1; addXP(4); }
+  state.totalAnswered=(state.totalAnswered||0)+1;
+  save();
+}
+
+function revealConjugation() {
+  document.querySelectorAll('.verb-highlight').forEach(function(el){ el.style.filter='none'; });
+}
+
+function nextVerb() { verbIdx++; renderVerbDrill(); }
+
+/* ═══════════════════════════════════════════
+   PERSONAL WORD BANK
+═══════════════════════════════════════════ */
+function startWordBank() { renderWordBank(); }
+
+function renderWordBank() {
+  var el = document.getElementById('wordBankContent');
+  var custom = state.customVocab||[];
+  var lvlLabels = ['New','Learning','Familiar','Good','Mastered','Expert'];
+
+  el.innerHTML = '<div style="display:flex;flex-direction:column;gap:14px;padding-top:4px">'
+    + '<div class="add-word-form">'
+    + '<div style="font-weight:600;font-size:15px;margin-bottom:12px">Add a new word</div>'
+    + '<div class="form-row"><input class="form-input" id="wbEs" placeholder="Spanish word or phrase"></div>'
+    + '<div class="form-row"><input class="form-input" id="wbEn" placeholder="English meaning"></div>'
+    + '<div class="form-row"><input class="form-input" id="wbEx" placeholder="Example sentence (optional)"></div>'
+    + '<button class="btn btn-primary" onclick="addCustomWord()">Add to Word Bank</button>'
+    + '</div>'
+    + (custom.length ? '<button class="btn btn-primary" onclick="practiceCustomWords()" style="background:var(--accent2)">Practice My Words</button>' : '')
+    + '</div>';
+
+  if (!custom.length) return;
+
+  var wrapper = el.querySelector('div');
+  var lbl = document.createElement('div');
+  lbl.className = 'section-lbl';
+  lbl.style.cssText = 'margin-bottom:10px;margin-top:4px';
+  lbl.textContent = 'Your words (' + custom.length + ')';
+  wrapper.insertBefore(lbl, wrapper.children[1]);
+
+  var list = document.createElement('div');
+  list.style.cssText = 'display:flex;flex-direction:column;gap:10px;margin-bottom:12px';
+
+  custom.forEach(function(v, i) {
+    var lvl = getVocabLevel(v.es);
+    var item = document.createElement('div');
+    item.className = 'bookmark-item';
+
+    var words = document.createElement('div');
+    words.className = 'bookmark-words';
+
+    var esEl = document.createElement('div');
+    esEl.className = 'bookmark-es';
+    esEl.innerHTML = v.es + ' <span class="custom-badge">custom</span>';
+
+    var enEl = document.createElement('div');
+    enEl.className = 'bookmark-en';
+    enEl.innerHTML = v.en + ' · <span style="color:var(--accent);font-size:11px">'+lvlLabels[lvl]+'</span>';
+
+    words.appendChild(esEl);
+    words.appendChild(enEl);
+
+    if (v.ex) {
+      var exEl = document.createElement('div');
+      exEl.style.cssText = 'font-size:11px;color:var(--muted);font-style:italic;margin-top:2px';
+      exEl.textContent = '"' + v.ex + '"';
+      words.appendChild(exEl);
+    }
+
+    var btns = document.createElement('div');
+    btns.style.cssText = 'display:flex;gap:8px;align-items:center';
+
+    var playBtn = document.createElement('button');
+    playBtn.style.cssText = 'background:var(--surface2);border:1.5px solid var(--border);border-radius:50%;width:32px;height:32px;font-size:14px;cursor:pointer';
+    playBtn.textContent = '▶';
+    (function(word){ playBtn.onclick = function(){ speak(word, 0.8); }; })(v.es);
+
+    var delBtn = document.createElement('div');
+    delBtn.style.cssText = 'font-size:20px;color:var(--muted);cursor:pointer;padding:4px';
+    delBtn.textContent = '✕';
+    (function(idx){ delBtn.onclick = function(){ removeCustomWord(idx); }; })(i);
+
+    btns.appendChild(playBtn);
+    btns.appendChild(delBtn);
+    item.appendChild(words);
+    item.appendChild(btns);
+    list.appendChild(item);
+  });
+
+  wrapper.insertBefore(list, wrapper.children[2]);
+}
+
+function addCustomWord() {
+  var es = (document.getElementById('wbEs').value||'').trim();
+  var en = (document.getElementById('wbEn').value||'').trim();
+  var ex = (document.getElementById('wbEx').value||'').trim();
+  if (!es || !en) {
+    alert('Please enter both the Spanish word and English meaning.');
+    return;
+  }
+  if (!state.customVocab) state.customVocab = [];
+  state.customVocab.push({es:es, en:en, ex:ex, custom:true});
+  // Add to SRS vocab bank
+  if (!state.vocab[es]) {
+    state.vocab[es] = {es:es, en:en, level:0, interval:1, nextReview:new Date().toISOString()};
+  }
+  save(); checkAchievements();
+  updateWordBankBadge();
+  renderWordBank();
+}
+
+function removeCustomWord(idx) {
+  if (!confirm('Remove this word from your bank?')) return;
+  state.customVocab.splice(idx, 1);
+  save();
+  updateWordBankBadge();
+  renderWordBank();
+}
+
+function practiceCustomWords() {
+  if (!state.customVocab || !state.customVocab.length) return;
+  flashDeck = shuffle([].concat(state.customVocab)).slice(0, 10);
+  flashIdx = 0; flashFlipped = false;
+  showScreen('flashScreen');
+  resetSession('Custom Vocab');
+  renderFlash();
+}
+
+/* ═══════════════════════════════════════════
+   30-DAY PLAN
+═══════════════════════════════════════════ */
+function startPlan() { renderPlan(); }
+
+function renderPlan() {
+  var el = document.getElementById('planContent');
+  var currentDay = state.dayPlan||0;
+  var todayPlan = PLAN[Math.min(currentDay, 29)];
+
+  // Build today card
+  el.innerHTML = '<div style="display:flex;flex-direction:column;gap:4px;padding-top:4px" id="planInner"></div>';
+  var inner = document.getElementById('planInner');
+
+  // Today highlight card
+  var todayCard = document.createElement('div');
+  todayCard.className = 'card';
+  todayCard.style.cssText = 'padding:18px;margin-bottom:12px;border:2px solid var(--accent)';
+
+  var dayLbl = document.createElement('div');
+  dayLbl.style.cssText = 'font-size:11px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px';
+  dayLbl.textContent = 'TODAY · Day ' + (currentDay+1);
+
+  var dayTitle = document.createElement('div');
+  dayTitle.style.cssText = 'font-family:Playfair Display,serif;font-size:20px;font-weight:700;margin-bottom:6px';
+  dayTitle.textContent = todayPlan.title;
+
+  var dayDesc = document.createElement('div');
+  dayDesc.style.cssText = 'font-size:13px;color:var(--muted);margin-bottom:14px';
+  dayDesc.textContent = todayPlan.desc;
+
+  var btnRow = document.createElement('div');
+  btnRow.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap';
+
+  var modeLabels = {daily:'Daily',flash:'Flashcards',cloze:'Fill-in-Blank',
+    listen:'Listen',grammar:'Grammar',builder:'Builder',reading:'Reading',
+    writing:'Writing',verbs:'Verbs',phrases:'Phrases',variants:'Variants',achievements:'Achievements'};
+  var modeEmoji = {daily:'🌟',flash:'🃏',cloze:'✏️',listen:'👂',grammar:'📝',
+    builder:'🧩',reading:'📖',writing:'✍️',verbs:'🔤',phrases:'💬',variants:'🌍',achievements:'🏆'};
+
+  todayPlan.modes.forEach(function(m) {
+    var btn = document.createElement('button');
+    btn.className = 'btn btn-primary';
+    btn.style.cssText = 'width:auto;padding:10px 16px;font-size:13px';
+    btn.textContent = (modeEmoji[m]||'') + ' ' + (modeLabels[m]||m);
+    (function(mode, topic){ btn.onclick = function(){ doPlanMode(mode, topic); }; })(m, todayPlan.topic);
+    btnRow.appendChild(btn);
+  });
+
+  if (currentDay < 30) {
+    var completeBtn = document.createElement('button');
+    completeBtn.style.cssText = 'margin-top:12px;width:100%;padding:12px;border-radius:12px;border:1.5px solid var(--green);background:#edfaf4;color:var(--green);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer';
+    completeBtn.textContent = '✓ Mark Day Complete';
+    completeBtn.onclick = completePlanDay;
+    todayCard.appendChild(dayLbl);
+    todayCard.appendChild(dayTitle);
+    todayCard.appendChild(dayDesc);
+    todayCard.appendChild(btnRow);
+    todayCard.appendChild(completeBtn);
+  }
+  inner.appendChild(todayCard);
+
+  // All days list
+  var allLbl = document.createElement('div');
+  allLbl.className = 'section-lbl';
+  allLbl.style.cssText = 'margin:8px 0';
+  allLbl.textContent = 'Full 30-Day Plan';
+  inner.appendChild(allLbl);
+
+  PLAN.forEach(function(p) {
+    var done = p.day-1 < currentDay;
+    var isToday = p.day-1 === currentDay;
+    var row = document.createElement('div');
+    row.className = 'plan-day';
+
+    var num = document.createElement('div');
+    num.className = 'plan-day-num ' + (done?'done':isToday?'today':'future');
+    num.textContent = done ? '✓' : p.day;
+
+    var info = document.createElement('div');
+    info.className = 'plan-day-info';
+
+    var title = document.createElement('div');
+    title.className = 'plan-day-title';
+    title.style.color = isToday ? 'var(--accent)' : done ? 'var(--muted)' : '';
+    title.textContent = p.title;
+
+    var desc = document.createElement('div');
+    desc.className = 'plan-day-desc';
+    desc.textContent = p.desc;
+
+    info.appendChild(title);
+    info.appendChild(desc);
+    row.appendChild(num);
+    row.appendChild(info);
+    inner.appendChild(row);
+  });
+}
+
+function doPlanMode(mode, topic) {
+  state.topic = topic;
+  save();
+  startMode(mode);
+}
+
+function completePlanDay() {
+  if (state.dayPlan < 30) {
+    state.dayPlan = (state.dayPlan||0) + 1;
+    save(); checkAchievements(); updatePlanBadge();
+    showScreen('planScreen');
+    renderPlan();
+    addXP(10);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   ACHIEVEMENTS SCREEN
+═══════════════════════════════════════════ */
+function startAchievements() { renderAchievements(); }
+
+function renderAchievements() {
+  var el = document.getElementById('achievementsContent');
+  var earned = Object.keys(state.achievements||{}).length;
+
+  var html = '<div style="text-align:center;margin-bottom:20px">'
+    + '<div style="font-family:Playfair Display,serif;font-size:32px;font-weight:700;color:var(--gold)">'+earned+'<span style="font-size:18px;color:var(--muted)">/'+ACHIEVEMENTS.length+'</span></div>'
+    + '<div style="font-size:13px;color:var(--muted)">achievements earned</div>'
+    + '</div>'
+    + '<div class="achievements-grid">';
+
+  ACHIEVEMENTS.forEach(function(a) {
+    var isEarned = !!(state.achievements||{})[a.id];
+    html += '<div class="achievement-card '+(isEarned?'earned':'locked')+'">'
+      + '<div class="achievement-em">'+a.em+'</div>'
+      + '<div class="achievement-name">'+a.name+'</div>'
+      + '<div class="achievement-desc">'+a.desc+'</div>'
+      + (isEarned ? '<div style="font-size:10px;color:var(--gold);margin-top:6px;font-weight:600">EARNED</div>' : '')
+      + '</div>';
+  });
+
+  html += '</div>';
+  el.innerHTML = html;
+}
+
 /* ═══════════════════════════════════════════
    INIT
 ═══════════════════════════════════════════ */
 (async function init() {
   await load();
+  if (!state.region) state.region = 'General';
+  if (!state.flashMode) state.flashMode = 'normal';
+  if (!state.achievements) state.achievements = {};
+  if (!state.customVocab) state.customVocab = [];
+  renderRegions();
   renderTopics();
   updateHUD();
+  updateAchieveBadge();
+  updateWordBankBadge();
+  updatePlanBadge();
   document.querySelector('.mode-btn.convo').onclick = () => startConvo();
 
   // Show install banner if not running as installed PWA
